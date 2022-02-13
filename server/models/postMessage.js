@@ -2,7 +2,7 @@
 
 import mongoose from "mongoose";
 
-// Schema
+// Schemas
 
 const postSchema = mongoose.Schema({
     title: String,
