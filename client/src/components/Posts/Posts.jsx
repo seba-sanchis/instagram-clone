@@ -8,15 +8,15 @@ import Post from "./Post/Post";
 // Component
 
 const Posts = () => {
-    const posts = useSelector((state) => state.posts);
+  const posts = useSelector((state) => state.posts);
 
-    return (
-        <div>
-        <h1>Posts</h1>
-        <Post />
-        <Post />
-        </div>
-    );
-}
+  return (
+    <div>
+      {posts.map((post) => (
+        <Post post={post} key={post._id} />
+      ))}
+    </div>
+  );
+};
 
 export default Posts;
