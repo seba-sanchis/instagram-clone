@@ -4,7 +4,7 @@ import React from "react";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 
-import { deletePost } from "../../../actions/posts";
+import { deletePost, likePost } from "../../../actions/posts";
 
 // Component
 
@@ -23,8 +23,8 @@ const Post = ({ post, setCurrentId }) => {
       <div>{post.tags.map((tag) => `#${tag} `)}</div>
       <div>{post.title}</div>
       <div>{post.message}</div>
-      <button onClick={() => {}}>Like {post.likeCount}</button>
-      <button onClick={() => dispatch(deletePost(post._id))}>Delete</button>
+      <button onClick={() => dispatch(likePost(post._id))}> Like {post.likeCount} </button>
+      <button onClick={() => dispatch(deletePost(post._id))}> Delete </button>
     </div>
   );
 };

@@ -72,7 +72,7 @@ const Form = ({ currentId, setCurrentId }) => {
         type="text"
         name="tags"
         value={postData.tags}
-        onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
+        onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(",") })}
       />
       <div>
         <FileBase
