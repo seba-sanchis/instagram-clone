@@ -2,10 +2,15 @@
 
 import React from "react";
 import moment from "moment";
+import { useDispatch } from "react-redux";
+
+import { deletePost } from "../../../actions/posts";
 
 // Component
 
 const Post = ({ post, setCurrentId }) => {
+  const dispatch = useDispatch();
+
   return (
     <div>
       <div><img src={post.selectedFile} /></div>
@@ -19,7 +24,7 @@ const Post = ({ post, setCurrentId }) => {
       <div>{post.title}</div>
       <div>{post.message}</div>
       <button onClick={() => {}}>Like {post.likeCount}</button>
-      <button onClick={() => {}}>Delete</button>
+      <button onClick={() => dispatch(deletePost(post._id))}>Delete</button>
     </div>
   );
 };
