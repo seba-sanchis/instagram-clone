@@ -7,13 +7,13 @@ import Post from "./Post/Post";
 
 // Component
 
-const Posts = () => {
+const Posts = ({ setCurrentId }) => {
   const posts = useSelector((state) => state.posts);
 
   return (
     <div>
       {posts.map((post) => (
-        <Post post={post} key={post._id} />
+        <Post post={post} key={post._id} setCurrentId={setCurrentId} />
       ))}
     </div>
   );
