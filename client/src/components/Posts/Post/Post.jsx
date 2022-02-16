@@ -13,7 +13,7 @@ const Post = ({ post, setCurrentId }) => {
 
   return (
     <div>
-      <div><img src={post.selectedFile} /></div>
+      <div><img src={post.selectedFile} alt={post.creator + "'s post picture"} /></div>
       <div>{post.title}</div>
       <div>{post.creator}</div>
       <div>{moment(post.createdAt).fromNow()}</div>

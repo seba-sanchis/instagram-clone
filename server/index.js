@@ -4,12 +4,14 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
+import dotenv from "dotenv";
 
 import postRoutes from "./routes/posts.js";
 
 // Initializing app
 
 const app = express();
+dotenv.config();
 
 // General setups
 
@@ -21,9 +23,8 @@ app.use("/posts", postRoutes);
 
 // MongoDB: connection with atlas cloud database
 
-const CONNECTION_URL = "mongodb+srv://seba-sanchis:C33nvqKjRlsbblOs@cluster0.azqye.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
     .catch((error) => console.log(error.message));
