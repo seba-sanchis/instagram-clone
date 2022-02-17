@@ -1,29 +1,22 @@
 // Imports
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-
-import { getPosts } from "./actions/posts";
-import Posts from "./components/Posts/Posts";
-import Form from "./components/Form/Form";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
+import Auth from "./components/Auth/Auth";
 
 // App
-
 const App = () => {
-    const [currentId, setCurrentId] = useState(null);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getPosts());
-    }, [currentId, dispatch]);
-
-    return (
-        <div>
-            <h1>App</h1>
-            <Posts setCurrentId={setCurrentId} />
-            <Form currentId={currentId} setCurrentId={setCurrentId} />
-        </div>
-    )
-}
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<Auth />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 export default App;
