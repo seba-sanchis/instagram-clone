@@ -1,10 +1,28 @@
 // Imports
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 // Component
 const Navbar = () => {
-  const user = null;
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const logout = () => {
+    dispatch({ type: "LOGOUT" });
+
+    navigate("/");
+
+    setUser(null);
+  };
+
+  useEffect(() => {
+    const token = user?.token;
+
+    setUser(JSON.parse(localStorage.getItem("profile")));
+  }, [location]);
 
   return (
     <div>
@@ -18,7 +36,7 @@ const Navbar = () => {
               <div>{user.result.name.charAt(0)}</div>
             )}
             <div>{user.result.name}</div>
-            <button>Logout</button>
+            <button onClick={logout}>Logout</button>
           </div>
         ) : (
           <Link to="/auth">Sing in</Link>
