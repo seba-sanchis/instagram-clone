@@ -1,24 +1,39 @@
 // Import
 import React, { useState } from "react";
-import { GoogleLogin } from "react-google-login";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { GoogleLogin } from "react-google-login";
 
 import Input from "./Input";
+import { signin, signup} from "../../actions/auth";
+
+// Variables
+const initialState = { firstName: "", lastName: "", email: "", password: "", confirmPassword: "" }
 
 // Component
 const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
+  const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleShowPassword = () =>
     setShowPassword((prevShowPassword) => !prevShowPassword);
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const handleChange = () => {};
+    if (isSignup) {
+      dispatch(signup(formData, navigate))
+    } else {
+      dispatch(signin(formData, navigate))
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value});
+  };
 
   const switchMode = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup);
@@ -47,7 +62,10 @@ const Auth = () => {
       <div>{isSignup ? "Sign Up" : "Sign In"}</div>
       <form onSubmit={handleSubmit}>
         {isSignup && (
-          <Input type="text" name="firstName" onChange={handleChange} />
+          <>
+            <Input type="text" name="firstName" onChange={handleChange} />
+            <Input type="text" name="lastName" onChange={handleChange} />
+          </>
         )}
         <Input type="email" name="email" onChange={handleChange} />
         <label>
