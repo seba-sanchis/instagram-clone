@@ -7,6 +7,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import postRoutes from "./routes/posts.js";
+import userRoutes from "./routes/users.js";
 
 // Initializing app
 
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/posts", postRoutes);
+app.use("/user", userRoutes);
 
 // MongoDB: connection with atlas cloud database
 

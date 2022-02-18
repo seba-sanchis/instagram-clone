@@ -4,7 +4,6 @@ import mongoose from 'mongoose';
 import PostMessage from "../models/postMessage.js";
 
 // Controllers
-
 export const getPosts = async (req, res) => {
     try {
         const postMessages = await PostMessage.find();
