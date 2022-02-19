@@ -1,13 +1,20 @@
 // Imports
-import React from 'react';
+import React from "react";
 
 // Component
-const Input = ({ type, name, handleChange }) => {
+const Input = ({ type, name, onChange }) => {
   return (
     <div>
-        <input type={type} name={name} onChange={handleChange} required autoFocus />
+      <label>
+        <input
+          type={type}
+          name={name}
+          onChange={onChange}
+          required
+        />
+      </label>
     </div>
-  )
-}
+  );
+};
 
 export default Input;

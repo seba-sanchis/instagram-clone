@@ -4,40 +4,38 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
 
-import Input from "./Input";
 import { signin, signup} from "../../actions/auth";
+import { AUTH } from '../../constants/actionTypes';
+import Input from "./Input";
 
 // Variables
 const initialState = { firstName: "", lastName: "", email: "", password: "", confirmPassword: "" }
 
 // Component
 const Auth = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [form, setForm] = useState(initialState);
   const [isSignup, setIsSignup] = useState(false);
-  const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const handleShowPassword = () =>
-    setShowPassword((prevShowPassword) => !prevShowPassword);
-
+  
+  const [showPassword, setShowPassword] = useState(false);
+  const handleShowPassword = () => setShowPassword(!showPassword);
+  
+  const switchMode = () => {
+    setForm(initialState);
+    setIsSignup((prevIsSignup) => !prevIsSignup);
+    setShowPassword(false);
+  };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (isSignup) {
-      dispatch(signup(formData, navigate))
+      console.log(form, "auth component")
+      dispatch(signup(form, navigate))
     } else {
-      dispatch(signin(formData, navigate))
+      dispatch(signin(form, navigate))
     }
-  };
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value});
-  };
-
-  const switchMode = () => {
-    setIsSignup((prevIsSignup) => !prevIsSignup);
-    handleShowPassword(false);
   };
 
   const googleSuccess = async (res) => {
@@ -45,7 +43,7 @@ const Auth = () => {
     const token = res?.tokenId;
 
     try {
-      dispatch({ type:"AUTH", data: { result, token } });
+      dispatch({ type: AUTH, data: { result, token } });
 
       navigate("/");
     } catch (error) {
@@ -53,10 +51,10 @@ const Auth = () => {
     }
   };
 
-  const googleFailure = () => {
-    console.log("Google Sign In was unsuccessful. Try again later");
-  };
+  const googleError = () => alert("Google Sign In was unsuccessful. Try again later");
 
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  
   return (
     <div>
       <div>{isSignup ? "Sign Up" : "Sign In"}</div>
@@ -68,7 +66,7 @@ const Auth = () => {
           </>
         )}
         <Input type="email" name="email" onChange={handleChange} />
-        <label>
+        <div>
           <Input
             type={showPassword ? "text" : "password"}
             name="password"
@@ -77,7 +75,7 @@ const Auth = () => {
           <button type="button" onClick={handleShowPassword}>
             {showPassword ? "Hide" : "Show"}
           </button>
-        </label>
+        </div>
         {isSignup && (
           <Input
             type="password"
@@ -85,14 +83,14 @@ const Auth = () => {
             onChange={handleChange}
           />
         )}
-        <button type="submit">{isSignup ? "Sign Up" : "Sign In"}</button>
+        <button type="submit">{ isSignup ? "Sign Up" : "Sign In" }</button>
         <GoogleLogin
           clientId="247965213317-pijt97o4jejvqjdss4aqb048jhbobf5p.apps.googleusercontent.com"
           render={(renderProps) => (
             <button type="button" onClick={renderProps.onClick} disabled={renderProps.disabled}>Google Sign In</button>
           )}
           onSuccess={googleSuccess}
-          onFailure={googleFailure}
+          onFailure={googleError}
           cookiePolicy="single_host_origin"
         />
         <button type="button" onClick={switchMode}>
