@@ -13,9 +13,9 @@ const Post = ({ post, setCurrentId }) => {
 
   return (
     <div>
-      <div><img src={post.selectedFile} alt={post.creator + "'s post picture"} /></div>
+      <div><img src={post.selectedFile} alt={post.name + "'s post picture"} /></div>
       <div>{post.title}</div>
-      <div>{post.creator}</div>
+      <div>{post.name}</div>
       <div>{moment(post.createdAt).fromNow()}</div>
       <div>
           <button onClick={() => setCurrentId(post._id)}>Edit</button>
