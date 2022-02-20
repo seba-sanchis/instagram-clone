@@ -46,3 +46,17 @@ export const signup = async (req, res) => {
         res.status(500).json({ message: "Something went wrong." });
     }
 }
+
+export const getUsersBySearch = async (req, res) => {
+    const { searchQuery } = req.query;
+
+    try {
+        const data = new RegExp(searchQuery, "i");
+
+        const users = await User.find({ $or: [{ name: data }, { email: data }] });
+
+        res.json({ data: users });
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}

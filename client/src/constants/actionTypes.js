@@ -6,4 +6,5 @@ export const LIKE = "LIKE";
 export const DELETE = "DELETE";
 
 export const AUTH = "AUTH";
+export const FETCH_USERS = "FETCH_USERS";
 export const LOGOUT = "LOGOUT";
