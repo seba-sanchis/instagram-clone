@@ -6,9 +6,9 @@ import PostMessage from "../models/postMessage.js";
 // Controllers
 export const getPosts = async (req, res) => {
     try {
-        const postMessages = await PostMessage.find();
+        const posts = await PostMessage.find().sort({ _id: -1 });
 
-        res.status(200).json(postMessages);
+        res.status(200).json({ data: posts });
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
