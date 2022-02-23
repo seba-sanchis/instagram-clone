@@ -5,6 +5,7 @@ import moment from "moment";
 import { useParams, useNavigate } from "react-router-dom";
 
 import { getPost } from "../../actions/posts";
+import CommentSection from "./CommentSection";
 
 // Component
 const PostDetails = () => {
@@ -33,6 +34,7 @@ const PostDetails = () => {
       <div>{moment(post.createdAt).fromNow()}</div>
       <div>{post.tags.map((tag) => `#${tag} `)}</div>
       <div>{post.message}</div>
+      <CommentSection post={post} />
     </div>
   );
 };
