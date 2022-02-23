@@ -2,12 +2,14 @@
 import React from "react";
 import moment from "moment";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { deletePost, likePost } from "../../../actions/posts";
 
 // Component
 const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("profile"));
 
   const Likes = () => {
@@ -30,6 +32,8 @@ const Post = ({ post, setCurrentId }) => {
     return <>Like</>;
   };
 
+  const openPost = () => navigate(`/posts/${post._id}`);
+
   return (
     <div>
       <div>
@@ -45,7 +49,6 @@ const Post = ({ post, setCurrentId }) => {
         </div>
       )}
       <div>{post.tags.map((tag) => `#${tag} `)}</div>
-      <div>{post.title}</div>
       <div>{post.message}</div>
       <button
         disabled={!user?.result}
@@ -53,6 +56,7 @@ const Post = ({ post, setCurrentId }) => {
       >
         <Likes />
       </button>
+      <button onClick={openPost}>View all comments</button>
       {(user?.result?.googleId === post?.creator ||
         user?.result?._id === post?.creator) && (
         <button onClick={() => dispatch(deletePost(post._id))}> Delete </button>
