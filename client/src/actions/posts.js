@@ -1,5 +1,5 @@
 // Imports
-import { FETCH_POST, FETCH_POSTS, CREATE, UPDATE, LIKE, DELETE, START_LOADING, END_LOADING } from "../constants/actionTypes";
+import { FETCH_POST, FETCH_POSTS, CREATE, UPDATE, LIKE, COMMENT, DELETE, START_LOADING, END_LOADING } from "../constants/actionTypes";
 import * as api from "../api/index.js";
 
 // Action Creators
@@ -47,7 +47,7 @@ export const updatePost = (id, post) => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 export const likePost = (id) => async (dispatch) => {
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -59,7 +59,19 @@ export const likePost = (id) => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
+
+export const commentPost = (value, id) => async (dispatch) => {
+  try {
+    const { data } = await api.comment(value, id);
+
+    dispatch({ type: COMMENT, payload: data });
+
+    return data.comments;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const deletePost = (id) => async (dispatch) => {
   try {
@@ -69,4 +81,4 @@ export const deletePost = (id) => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
