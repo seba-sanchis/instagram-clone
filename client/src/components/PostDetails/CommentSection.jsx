@@ -6,14 +6,22 @@ import { commentPost } from "../../actions/posts"
 
 // Component
 const CommentSection = ({ post }) => {
-  const [comments, setComments] = useState([1, 2, 3, 4]);
+  const [comments, setComments] = useState(post?.comments);
   const [comment, setComment] = useState("");
   const dispatch = useDispatch();
+  const commentsRef = useRef();
+
   const user = JSON.parse(localStorage.getItem("profile"));
 
-  const handleClick = () => {
+  const handleClick = async () => {
       const finalComment = `${user.result.name}: ${comment}`;
-      dispatch(commentPost(finalComment, post._id));
+
+      const newComments = await dispatch(commentPost(finalComment, post._id));
+
+      setComments(newComments);
+      setComment("");
+
+      commentsRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -21,8 +29,12 @@ const CommentSection = ({ post }) => {
       <div>
         <div>Comments</div>
         {comments.map((c, i) => (
-          <div key={i}>Comment {i}</div>
+          <div key={i}>
+            <span>{c.split(": ")[0]}</span>
+            <span>{c.split(":")[1]}</span>
+          </div>
         ))}
+        <div ref={commentsRef} />
       </div>
       {user?.result?.name && (
       <div>
