@@ -16,8 +16,8 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/posts/:id" element={<PostDetails />} />
         <Route path="/auth" element={!user ? <Auth /> : <Navigate to="/" />} />
+        <Route path="/posts/:id" element={<PostDetails />} />
       </Routes>
     </BrowserRouter>
   );
