@@ -6,6 +6,8 @@ import decode from "jwt-decode";
 
 import * as actionType from '../../constants/actionTypes';
 import { getUsersBySearch } from "../../actions/users";
+import "./Navbar.scss";
+import logo from "../../images/logo.png";
 
 // Component
 const Navbar = () => {
@@ -50,12 +52,15 @@ const Navbar = () => {
   };
 
   return (
-    <div>
-      <Link to="/">Home</Link>
-      <div>
-        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} onKeyDown={handleKeyPress} placeholder="Search" autoCapitalize="none"/>
+    <div className="nav">
+      <div className="nav-logo">
+        <Link to="/"><img src={logo} /></Link>
       </div>
-      <div>
+      <div className="nav-search">
+        <svg className="nav-search-icon" role="img" viewBox="0 0 24 24"><path d="M19 10.5A8.5 8.5 0 1110.5 2a8.5 8.5 0 018.5 8.5z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="16.511" x2="22" y1="16.511" y2="22"></line></svg>
+        <input className="nav-search-input" type="text" value={search} onChange={(e) => setSearch(e.target.value)} onKeyDown={handleKeyPress} placeholder="Search" autoCapitalize="none"/>
+      </div>
+      <div className="nav-menu">
         {user ? (
           <div>
             {user.result.imageUrl ? (
