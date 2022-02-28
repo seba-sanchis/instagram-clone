@@ -1,36 +1,109 @@
 .post {
-    background: #fff;
-    border: 1px solid #dbdbdb;
-    width: 100%;
-    margin-bottom: 24px;
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  width: 100%;
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  .post-header {
+    padding: 14px 4px 14px 16px;
+    max-width: calc(100% - 48px);
+    flex-grow: 1;
+  }
+  .post-user {
+    color: #262626;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .post-menu {
+    padding: 8px;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    .post-header {
-        padding: 14px 4px 14px 16px;
-        max-width: calc(100% - 48px);
-        flex-grow: 1;
-    }
-    .post-user {
+    justify-content: center;
+    cursor: pointer;
+  }
+  .post-icon {
+    color: #262626;
+    fill: #262626;
+    width: 24px;
+    height: 24px;
+  }
+  .post-img {
+    width: 100%;
+  }
+  .post-btns {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    width: 100%;
+    .post-like-btn {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      cursor: pointer;
+      &:hover .post-like-icon {
+        fill: #8e8e8e;
+      }
+      .post-like-icon {
         color: #262626;
-        font-size: 14px;
-        font-weight: 600;
-    }
-    .post-menu {
-        padding: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        height: fit-content;
-    }
-    .post-icon {
-        color: #262626;
-        fill: #262626;
         width: 24px;
         height: 24px;
+      }
     }
-    .post-img {
-        width: 100%;
+    .post-comment-btn {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      &:hover .post-comment-icon {
+        color: #8e8e8e;
+      }
+      .post-comment-icon {
+        color: #262626;
+        width: 24px;
+        height: 24px;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-width: 2;
+        fill: none;
+      }
     }
+  }
+  .post-like {
+    width: 100%;
+    padding: 0 16px;
+    margin-bottom: 8px;
+    color: #262626;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .post-messages {
+    padding: 0 16px;
+    .post-message {
+      color: #262626;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .post-tags {
+      color: #00376b;
+      font-size: 14px;
+      font-weight: 400;
+      margin: 4px 0;
+    }
+    .post-comments {
+      color: #8e8e8e;
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+    .post-time {
+      color: #8e8e8e;
+      font-size: 10px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
 }

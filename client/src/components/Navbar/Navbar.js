@@ -52,30 +52,32 @@ const Navbar = () => {
   };
 
   return (
-    <div className="nav">
-      <div className="nav-logo">
-        <Link to="/"><img src={logo} /></Link>
+    <nav className="nav">
+      <div className="nav-container">
+        <div className="nav-logo">
+          <Link to="/"><img src={logo} /></Link>
+        </div>
+        <div className="nav-search">
+          <svg className="nav-search-icon" role="img" viewBox="0 0 24 24"><path d="M19 10.5A8.5 8.5 0 1110.5 2a8.5 8.5 0 018.5 8.5z"></path><line x1="16.511" x2="22" y1="16.511" y2="22"></line></svg>
+          <input className="nav-search-input" type="text" value={search} onChange={(e) => setSearch(e.target.value)} onKeyDown={handleKeyPress} placeholder="Search" autoCapitalize="none"/>
+        </div>
+        <div className="nav-menu">
+          {user ? (
+            <div>
+              {user.result.imageUrl ? (
+                <img src={user.result.imageUrl} alt={user.result.name} />
+              ) : (
+                <div>{user.result.name.charAt(0)}</div>
+              )}
+              <div>{user.result.name}</div>
+              <button onClick={logout}>Logout</button>
+            </div>
+          ) : (
+            <Link to="/auth">Sing in</Link>
+          )}
+        </div>
       </div>
-      <div className="nav-search">
-        <svg className="nav-search-icon" role="img" viewBox="0 0 24 24"><path d="M19 10.5A8.5 8.5 0 1110.5 2a8.5 8.5 0 018.5 8.5z"></path><line x1="16.511" x2="22" y1="16.511" y2="22"></line></svg>
-        <input className="nav-search-input" type="text" value={search} onChange={(e) => setSearch(e.target.value)} onKeyDown={handleKeyPress} placeholder="Search" autoCapitalize="none"/>
-      </div>
-      <div className="nav-menu">
-        {user ? (
-          <div>
-            {user.result.imageUrl ? (
-              <img src={user.result.imageUrl} alt={user.result.name} />
-            ) : (
-              <div>{user.result.name.charAt(0)}</div>
-            )}
-            <div>{user.result.name}</div>
-            <button onClick={logout}>Logout</button>
-          </div>
-        ) : (
-          <Link to="/auth">Sing in</Link>
-        )}
-      </div>
-    </div>
+    </nav>
   );
 };
 
