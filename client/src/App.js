@@ -13,7 +13,7 @@ const App = () => {
   const user = JSON.parse(localStorage.getItem("profile"));
 
   return (
-    <BrowserRouter>
+    <BrowserRouter className="app">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

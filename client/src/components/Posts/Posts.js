@@ -3,6 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import Post from "./Post/Post";
+import "./Posts.scss"
 
 // Component
 const Posts = ({ setCurrentId }) => {
@@ -13,7 +14,7 @@ const Posts = ({ setCurrentId }) => {
   return isLoading ? (
     "LOADING..."
   ) : (
-    <div>
+    <div className="posts">
       {posts.map((post) => (
         <Post post={post} key={post._id} setCurrentId={setCurrentId} />
       ))}

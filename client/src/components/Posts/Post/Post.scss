@@ -1,0 +1,36 @@
+.post {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    width: 100%;
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .post-header {
+        padding: 14px 4px 14px 16px;
+        max-width: calc(100% - 48px);
+        flex-grow: 1;
+    }
+    .post-user {
+        color: #262626;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .post-menu {
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        height: fit-content;
+    }
+    .post-icon {
+        color: #262626;
+        fill: #262626;
+        width: 24px;
+        height: 24px;
+    }
+    .post-img {
+        width: 100%;
+    }
+}

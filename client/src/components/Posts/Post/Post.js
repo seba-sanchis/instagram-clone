@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { deletePost, likePost } from "../../../actions/posts";
+import "./Post.scss";
 
 // Component
 const Post = ({ post, setCurrentId }) => {
@@ -47,29 +48,31 @@ const Post = ({ post, setCurrentId }) => {
   const openPost = () => navigate(`/posts/${post._id}`);
 
   return (
-    <div>
-      <div>
-        <img src={post.selectedFile} alt={post.name + "'s post picture"} />
-      </div>
-      <div>{post.title}</div>
-      <div>{post.name}</div>
-      <div>{moment(post.createdAt).fromNow()}</div>
+    <div className="post">
+      <header className="post-header">
+        <div className="post-user">{post.name}</div>
+      </header>
+        <button className="post-menu">
+          <svg className="post-icon" role="img" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
+        </button>
       {(user?.result?.googleId === post?.creator ||
         user?.result?._id === post?.creator) && (
         <div>
           <button onClick={() => setCurrentId(post._id)}>Edit</button>
+          <button onClick={() => dispatch(deletePost(post._id))}> Delete </button>
         </div>
       )}
-      <div>{post.tags.map((tag) => `#${tag} `)}</div>
-      <div>{post.message}</div>
+      <div>
+        <img className="post-img" src={post.selectedFile} alt={post.name + "'s post picture"} />
+      </div>
+      <div>{post.title}</div>
+      <div>{moment(post.createdAt).fromNow()}</div>
       <button disabled={!user?.result} onClick={handleLike}>
         <Likes />
       </button>
+      <div>{post.message}</div>
+      <div>{post.tags.map((tag) => `#${tag} `)}</div>
       <button onClick={openPost}>View all comments</button>
-      {(user?.result?.googleId === post?.creator ||
-        user?.result?._id === post?.creator) && (
-        <button onClick={() => dispatch(deletePost(post._id))}> Delete </button>
-      )}
     </div>
   );
 };
