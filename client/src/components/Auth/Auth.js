@@ -6,7 +6,7 @@ import { GoogleLogin } from "react-google-login";
 
 import { signin, signup} from "../../actions/auth";
 import { AUTH } from '../../constants/actionTypes';
-import Input from "./Input";
+import Input from "../Input/Input";
 
 // Variables
 const initialState = { firstName: "", lastName: "", email: "", password: "", confirmPassword: "" }

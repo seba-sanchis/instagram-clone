@@ -141,8 +141,41 @@
     font-size: 10px;
     font-weight: 400;
     text-transform: uppercase;
+    letter-spacing: .2px;
     width: 100%;
     padding: 0 16px;
+    margin-bottom: 16px;
   }
-  
+  .post-comment-add {
+    border-top: 1px solid #efefef;
+    padding: 6px 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .post-emoji-icon {
+      color: #262626;
+      fill: #262626;
+      width: 24px;
+      height: 24px;
+      margin: 8px 16px 8px 0;
+    }
+    .post-comment-area {
+      display: flex;
+      flex-grow: 1;
+      height: 18px;
+      line-height: 18px;
+      max-height: 80px;
+      color: #262626;
+      outline: 0;
+      font-size: 14px;
+    }
+    .post-comment-send {
+      color: #0095f6;
+      font-size: 14px;
+      font-weight: 600;
+      &:disabled {
+        opacity: .3;
+      }
+    }
+  }
 }
