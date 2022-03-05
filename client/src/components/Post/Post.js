@@ -71,7 +71,7 @@ const Post = ({ post, setCurrentId }) => {
       );
     }
 
-    return <>Like</>;
+    return null;
   };
 
   const Comments = () => (
@@ -119,7 +119,7 @@ const Post = ({ post, setCurrentId }) => {
          <svg className="post-comment-icon" role="img" viewBox="0 0 24 24"><path d="M20.656 17.008a9.993 9.993 0 10-3.59 3.615L22 22z"></path></svg>
         </button>
       </section>
-      <section className="post-likes">
+      <section className={<Likes /> === null ? "" : "post-likes"}>
         <Likes />
       </section>
       <div className="post-comments-container">
@@ -127,7 +127,7 @@ const Post = ({ post, setCurrentId }) => {
         <span>&nbsp;</span>
         <span className="post-message">{post.message}</span>
         <div className="post-tags">{post.tags.map((tag) => `#${tag} `)}</div>
-        <button className="post-comments-display" onClick={openPost}>View all comments</button>
+        <button className="post-comments-display" onClick={openPost}>View all {comments.length} comments</button>
         {/* <Comments /> */}
         <div>
           <div className="post-message">
