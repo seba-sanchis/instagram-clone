@@ -101,7 +101,7 @@ const Post = ({ post, setCurrentId }) => {
         <div className="post-user">{post.name}</div>
       </header>
         <button className="post-menu-btn" onClick={() => setToggleMenu(true)}>
-          <svg className="post-icon" role="img" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
+          <svg className="post-menu-icon" role="img" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
         </button>
       {toggleMenu && (
         <div className="post-menu" onClick={() => setToggleMenu(false)}>
@@ -128,7 +128,6 @@ const Post = ({ post, setCurrentId }) => {
         <span className="post-message">{post.message}</span>
         <div className="post-tags">{post.tags.map((tag) => `#${tag} `)}</div>
         <button className="post-comments-display" onClick={openPost}>View all {comments.length} comments</button>
-        {/* <Comments /> */}
         <div>
           <div className="post-message">
             <span className="post-user">{comments[comments.length-2].split(": ")[0]}</span>
