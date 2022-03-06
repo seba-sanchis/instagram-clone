@@ -139,8 +139,8 @@ const Post = ({ post, setCurrentId }) => {
             <span className="post-message">{comments[comments.length-1].split(":")[1]}</span>
           </div>
         </div>
-        {/* <div>{post.title}</div> */}
       </div>
+      {/* <div>{post.title}</div> */}
       <div className="post-time">{moment(post.createdAt).fromNow()}</div>
       <section className="post-comment-add">
         <div className="post-emoji-container">
