@@ -3,7 +3,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import Post from "../Post/Post";
-import "./Posts.scss"
 
 // Component
 const Posts = ({ setCurrentId }) => {

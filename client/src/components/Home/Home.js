@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { getPosts } from "../../actions/posts";
 import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
+import "./Home.scss"
 
 // Component
 const Home = () => {
@@ -16,10 +17,16 @@ const Home = () => {
   }, [currentId, dispatch]);
 
   return (
-    <div>
-      <Posts setCurrentId={setCurrentId} />
-      <Form currentId={currentId} setCurrentId={setCurrentId} />
-    </div>
+    <main>
+      <section className="home-section">
+        <div className="home-posts">
+          <Posts setCurrentId={setCurrentId} />
+        </div>
+        <div className="home-form">
+          <Form currentId={currentId} setCurrentId={setCurrentId} />
+        </div>
+      </section>
+    </main>
   );
 };
 
