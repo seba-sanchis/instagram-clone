@@ -7,6 +7,9 @@ import { GoogleLogin } from "react-google-login";
 import { signin, signup} from "../../actions/auth";
 import { AUTH } from '../../constants/actionTypes';
 import Input from "../Input/Input";
+import "./Auth.scss";
+import logo from "../../images/logo.png";
+
 
 // Variables
 const initialState = { firstName: "", lastName: "", email: "", password: "", confirmPassword: "" }
@@ -56,50 +59,56 @@ const Auth = () => {
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
   
   return (
-    <div>
-      <div>{isSignup ? "Sign Up" : "Sign In"}</div>
-      <form onSubmit={handleSubmit}>
-        {isSignup && (
-          <>
-            <Input type="text" name="firstName" onChange={handleChange} />
-            <Input type="text" name="lastName" onChange={handleChange} />
-          </>
-        )}
-        <Input type="email" name="email" onChange={handleChange} />
-        <div>
-          <Input
-            type={showPassword ? "text" : "password"}
-            name="password"
-            onChange={handleChange}
-          />
-          <button type="button" onClick={handleShowPassword}>
-            {showPassword ? "Hide" : "Show"}
-          </button>
-        </div>
-        {isSignup && (
-          <Input
-            type="password"
-            name="confirmPassword"
-            onChange={handleChange}
-          />
-        )}
-        <button type="submit">{ isSignup ? "Sign Up" : "Sign In" }</button>
-        <GoogleLogin
-          clientId="247965213317-pijt97o4jejvqjdss4aqb048jhbobf5p.apps.googleusercontent.com"
-          render={(renderProps) => (
-            <button type="button" onClick={renderProps.onClick} disabled={renderProps.disabled}>Google Sign In</button>
+    <main>
+      <article>
+        {/* <div>{isSignup ? "Sign up" : "Log In"}</div> */}
+        <img src={logo} />
+        <form onSubmit={handleSubmit}>
+          {isSignup && (
+            <>
+              <Input type="text" name="firstName" onChange={handleChange} />
+              <Input type="text" name="lastName" onChange={handleChange} />
+            </>
           )}
-          onSuccess={googleSuccess}
-          onFailure={googleError}
-          cookiePolicy="single_host_origin"
-        />
-        <button type="button" onClick={switchMode}>
+          <Input type="email" name="email" onChange={handleChange} />
+          <div>
+            <Input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              onChange={handleChange}
+            />
+            <button type="button" onClick={handleShowPassword}>
+              {showPassword ? "Hide" : "Show"}
+            </button>
+          </div>
+          {isSignup && (
+            <Input
+              type="password"
+              name="confirmPassword"
+              onChange={handleChange}
+            />
+          )}
+          <button type="submit">{ isSignup ? "Sign up" : "Log in" }</button>
+          <div>
+            <div></div>
+            <div>OR</div>
+            <div></div>
+          </div>
+          <GoogleLogin
+            clientId="247965213317-pijt97o4jejvqjdss4aqb048jhbobf5p.apps.googleusercontent.com"
+            render={(renderProps) => (
+              <button type="button" onClick={renderProps.onClick} disabled={renderProps.disabled}>Google Sign In</button>
+            )}
+            onSuccess={googleSuccess}
+            onFailure={googleError}
+            cookiePolicy="single_host_origin"
+          />
           {isSignup
-            ? "Already have an account? Sign In"
-            : "Don't have an account? Sign Up"}
-        </button>
-      </form>
-    </div>
+            ? <div>Have an account? <button type="button" onClick={switchMode}>Log in</button></div>
+            : <div>Don't have an account? <button type="button" onClick={switchMode}>Sign up</button></div>}
+        </form>
+      </article>
+    </main>
   );
 };
 
