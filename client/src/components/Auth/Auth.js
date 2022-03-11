@@ -60,53 +60,59 @@ const Auth = () => {
   
   return (
     <main>
-      <article>
+      <article className="auth-container">
         {/* <div>{isSignup ? "Sign up" : "Log In"}</div> */}
-        <img src={logo} />
-        <form onSubmit={handleSubmit}>
-          {isSignup && (
-            <>
-              <Input type="text" name="firstName" onChange={handleChange} />
-              <Input type="text" name="lastName" onChange={handleChange} />
-            </>
-          )}
-          <Input type="email" name="email" onChange={handleChange} />
-          <div>
-            <Input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              onChange={handleChange}
-            />
-            <button type="button" onClick={handleShowPassword}>
-              {showPassword ? "Hide" : "Show"}
-            </button>
+        <div className="auth">
+          <div className="auth-form-container">
+            <img className="auth-logo" src={logo} />
+            <form className="auth-form" onSubmit={handleSubmit}>
+              {isSignup && (
+                <>
+                  <Input type="text" name="firstName" onChange={handleChange} />
+                  <Input type="text" name="lastName" onChange={handleChange} />
+                </>
+              )}
+              <Input type="email" name="email" onChange={handleChange} />
+              <div>
+                <Input
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  onChange={handleChange}
+                />
+                <button type="button" onClick={handleShowPassword}>
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+              </div>
+              {isSignup && (
+                <Input
+                  type="password"
+                  name="confirmPassword"
+                  onChange={handleChange}
+                />
+              )}
+              <button type="submit">{ isSignup ? "Sign up" : "Log in" }</button>
+              <div>
+                <div></div>
+                <div>OR</div>
+                <div></div>
+              </div>
+              <GoogleLogin
+                clientId="247965213317-pijt97o4jejvqjdss4aqb048jhbobf5p.apps.googleusercontent.com"
+                render={(renderProps) => (
+                  <button type="button" onClick={renderProps.onClick} disabled={renderProps.disabled}>Google Sign In</button>
+                )}
+                onSuccess={googleSuccess}
+                onFailure={googleError}
+                cookiePolicy="single_host_origin"
+              />
+            </form>
           </div>
-          {isSignup && (
-            <Input
-              type="password"
-              name="confirmPassword"
-              onChange={handleChange}
-            />
-          )}
-          <button type="submit">{ isSignup ? "Sign up" : "Log in" }</button>
-          <div>
-            <div></div>
-            <div>OR</div>
-            <div></div>
+          <div className="auth-form-container">
+            {isSignup
+              ? <div>Have an account? <button type="button" onClick={switchMode}>Log in</button></div>
+              : <div>Don't have an account? <button type="button" onClick={switchMode}>Sign up</button></div>}
           </div>
-          <GoogleLogin
-            clientId="247965213317-pijt97o4jejvqjdss4aqb048jhbobf5p.apps.googleusercontent.com"
-            render={(renderProps) => (
-              <button type="button" onClick={renderProps.onClick} disabled={renderProps.disabled}>Google Sign In</button>
-            )}
-            onSuccess={googleSuccess}
-            onFailure={googleError}
-            cookiePolicy="single_host_origin"
-          />
-          {isSignup
-            ? <div>Have an account? <button type="button" onClick={switchMode}>Log in</button></div>
-            : <div>Don't have an account? <button type="button" onClick={switchMode}>Sign up</button></div>}
-        </form>
+        </div>
       </article>
     </main>
   );
