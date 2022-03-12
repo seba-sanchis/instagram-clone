@@ -1,18 +1,22 @@
 // Imports
 import React from "react";
 
+import "./Input.scss"
+
 // Component
 const Input = ({ type, name, onChange }) => {
   return (
-    <div>
+    <div className="input-container">
       <label>
-        <input
+        <span>{}</span>
+        <input className="input"
           type={type}
           name={name}
           onChange={onChange}
           required
         />
       </label>
+      <div></div>
     </div>
   );
 };

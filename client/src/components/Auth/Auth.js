@@ -73,13 +73,13 @@ const Auth = () => {
                 </>
               )}
               <Input type="email" name="email" onChange={handleChange} />
-              <div>
+              <div className="auth-password">
                 <Input
                   type={showPassword ? "text" : "password"}
                   name="password"
                   onChange={handleChange}
                 />
-                <button type="button" onClick={handleShowPassword}>
+                <button className="auth-password-btn" type="button" onClick={handleShowPassword}>
                   {showPassword ? "Hide" : "Show"}
                 </button>
               </div>
@@ -90,11 +90,11 @@ const Auth = () => {
                   onChange={handleChange}
                 />
               )}
-              <button type="submit">{ isSignup ? "Sign up" : "Log in" }</button>
-              <div>
-                <div></div>
-                <div>OR</div>
-                <div></div>
+              <button className="auth-submit-enabled" type="submit">{ isSignup ? "Sign up" : "Log in" }</button>
+              <div className="auth-divider">
+                <div className="auth-divider-line"></div>
+                <div className="auth-divider-text">OR</div>
+                <div className="auth-divider-line"></div>
               </div>
               <GoogleLogin
                 clientId="247965213317-pijt97o4jejvqjdss4aqb048jhbobf5p.apps.googleusercontent.com"
