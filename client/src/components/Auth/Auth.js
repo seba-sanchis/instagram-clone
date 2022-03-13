@@ -21,13 +21,9 @@ const Auth = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [showPassword, setShowPassword] = useState(false);
-  const handleShowPassword = () => setShowPassword(!showPassword);
-  
   const switchMode = () => {
     setForm(initialState);
     setIsSignup((prevIsSignup) => !prevIsSignup);
-    setShowPassword(false);
   };
   
   const handleSubmit = (e) => {
@@ -73,17 +69,12 @@ const Auth = () => {
                 </>
               )}
               <Input type="email" name="email" onChange={handleChange} value={form.email} />
-              <div className="auth-password">
-                <Input
-                  type={showPassword ? "text" : "password"}
-                  name="password"
-                  onChange={handleChange}
-                  value={form.password}
-                />
-                <button className="auth-password-btn" type="button" onClick={handleShowPassword}>
-                  {showPassword ? "Hide" : "Show"}
-                </button>
-              </div>
+              <Input
+                type="password"
+                 name="password"
+                onChange={handleChange}
+                value={form.password}
+              />
               {isSignup && (
                 <Input
                   type="password"

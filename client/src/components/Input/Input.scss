@@ -6,6 +6,9 @@
     border: 1px solid #dbdbdb;
     border-radius: 3px;
     font-size: 14px;
+    &:focus-within {
+        border: 1px solid #a8a8a8;
+    }
     .input-label {
         display: flex;
         line-height: 36px;
@@ -26,10 +29,21 @@
             flex: 1 0 auto;
             font-size: 16px;
             padding: 9px 0 7px 8px;
+            outline: 0;
         }
         .input-nonempty {
             font-size: 12px;
             padding: 14px 0 2px 8px;
+        }
+    }
+    .input-password {
+        padding-right: 8px;
+        margin-left: 8px;
+        .input-password-btn {
+            color: #262626;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
         }
     }
 }
