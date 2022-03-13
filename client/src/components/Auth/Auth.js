@@ -12,7 +12,7 @@ import logo from "../../images/logo.png";
 
 
 // Variables
-const initialState = { firstName: "", lastName: "", email: "", password: "", confirmPassword: "" }
+const initialState = { firstName: "", lastName: "", email: "", password: "", confirmPassword: "" };
 
 // Component
 const Auth = () => {
@@ -20,7 +20,7 @@ const Auth = () => {
   const [isSignup, setIsSignup] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
   
@@ -57,7 +57,7 @@ const Auth = () => {
   const googleError = () => alert("Google Sign In was unsuccessful. Try again later");
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-  
+
   return (
     <main>
       <article className="auth-container">
@@ -68,16 +68,17 @@ const Auth = () => {
             <form className="auth-form" onSubmit={handleSubmit}>
               {isSignup && (
                 <>
-                  <Input type="text" name="firstName" onChange={handleChange} />
-                  <Input type="text" name="lastName" onChange={handleChange} />
+                  <Input type="text" name="firstName" onChange={handleChange} value={form.firstName} />
+                  <Input type="text" name="lastName" onChange={handleChange} value={form.lastName} />
                 </>
               )}
-              <Input type="email" name="email" onChange={handleChange} />
+              <Input type="email" name="email" onChange={handleChange} value={form.email} />
               <div className="auth-password">
                 <Input
                   type={showPassword ? "text" : "password"}
                   name="password"
                   onChange={handleChange}
+                  value={form.password}
                 />
                 <button className="auth-password-btn" type="button" onClick={handleShowPassword}>
                   {showPassword ? "Hide" : "Show"}
@@ -88,6 +89,7 @@ const Auth = () => {
                   type="password"
                   name="confirmPassword"
                   onChange={handleChange}
+                  value={form.confirmPassword}
                 />
               )}
               <button className="auth-submit-enabled" type="submit">{ isSignup ? "Sign up" : "Log in" }</button>
