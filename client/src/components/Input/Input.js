@@ -42,11 +42,13 @@ const Input = ({ type, name, onChange, value }) => {
           required
         />
       </label>
-      <div className="input-password">
+      <div className="input-password-container">
         {name === "password" && value.length >= 1 && (
+        <div className="input-password">
           <button className="input-password-btn" type="button" onClick={handleShowPassword}>
             {showPassword ? "Hide" : "Show"}
           </button>
+        </div>
         )}
       </div>
     </div>

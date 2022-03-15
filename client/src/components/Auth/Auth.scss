@@ -32,11 +32,7 @@
                 margin: 24px 0 10px;
                 max-width: 350px;
                 width: 100%;
-                .auth-submit-disabled {
-                    background-color: rgba(0,149,246,.3);
-                    opacity: 1;
-                }
-                .auth-submit-enabled {
+                .auth-submit {
                     display: flex;
                     justify-content: center;
                     margin: 8px 40px;
@@ -47,6 +43,10 @@
                     font-size: 14px;
                     font-weight: 600;
                     padding: 5px 9px;
+                }
+                .auth-submit-disabled {
+                    background-color: rgba(0,149,246,.3);
+                    opacity: 1;
                 }
                 .auth-divider {
                     display: flex;

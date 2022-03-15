@@ -20,6 +20,7 @@
             font-size: 12px;
             position: absolute;
             left: 8px;
+            right: 0;
             transform-origin: left;
         }
         .input-placeholder-nonempty {
@@ -36,14 +37,16 @@
             padding: 14px 0 2px 8px;
         }
     }
-    .input-password {
+    .input-password-container {
         padding-right: 8px;
-        margin-left: 8px;
-        .input-password-btn {
-            color: #262626;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-        }
+        .input-password {
+            margin-left: 8px;
+            .input-password-btn {
+                color: #262626;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+    }
     }
 }

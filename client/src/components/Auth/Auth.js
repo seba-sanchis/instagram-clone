@@ -54,13 +54,17 @@ const Auth = () => {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
+  const re = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+
+  const submitOk = form.email.match(re) && form.password.length >= 6 ? "auth-submit" : "auth-submit auth-submit-disabled";
+
   return (
     <main>
       <article className="auth-container">
         {/* <div>{isSignup ? "Sign up" : "Log In"}</div> */}
         <div className="auth">
           <div className="auth-form-container">
-            <img className="auth-logo" src={logo} />
+            <img className="auth-logo" src={logo} alt="logo" />
             <form className="auth-form" onSubmit={handleSubmit}>
               {isSignup && (
                 <>
@@ -83,7 +87,7 @@ const Auth = () => {
                   value={form.confirmPassword}
                 />
               )}
-              <button className="auth-submit-enabled" type="submit">{ isSignup ? "Sign up" : "Log in" }</button>
+              <button className={submitOk} type="submit">{ isSignup ? "Sign up" : "Log in" }</button>
               <div className="auth-divider">
                 <div className="auth-divider-line"></div>
                 <div className="auth-divider-text">OR</div>
