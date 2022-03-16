@@ -10,7 +10,6 @@ import Input from "../Input/Input";
 import "./Auth.scss";
 import logo from "../../images/logo.png";
 
-
 // Variables
 const initialState = { firstName: "", lastName: "", email: "", password: "", confirmPassword: "" };
 
@@ -93,15 +92,14 @@ const Auth = () => {
                 <div className="auth-divider-text">OR</div>
                 <div className="auth-divider-line"></div>
               </div>
-              <GoogleLogin
-                clientId="247965213317-pijt97o4jejvqjdss4aqb048jhbobf5p.apps.googleusercontent.com"
-                render={(renderProps) => (
-                  <button type="button" onClick={renderProps.onClick} disabled={renderProps.disabled}>Google Sign In</button>
-                )}
-                onSuccess={googleSuccess}
-                onFailure={googleError}
-                cookiePolicy="single_host_origin"
-              />
+              <div className="auth-google-login">
+                <GoogleLogin
+                  clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                  onSuccess={googleSuccess}
+                  onFailure={googleError}
+                  cookiePolicy="single_host_origin"
+                />
+              </div>
             </form>
           </div>
           <div className="auth-form-container">
