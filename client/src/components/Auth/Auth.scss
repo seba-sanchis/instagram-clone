@@ -68,9 +68,35 @@
                 }
                 .auth-google-login {
                     display: flex;
+                    align-items: center;
                     justify-content: center;
                     margin: 8px 40px;
+                    .auth-google-oauth {
+                        width: 100%;
+                        box-shadow: none !important;
+                        button {
+                        }
+                        div {
+                            display: flex;
+                            align-items: center;
+                        }
+                        span {
+                            margin: auto;
+                            font-family: Roboto, sans-serif;
+                            font-weight: 600 !important;
+                        }
+                    }
                 }
+            }
+            .auth-account {
+                color: #262626;
+                font-size: 14px;
+                margin: 15px;
+            }
+            .auth-account-btn {
+                color: #0095f6;
+                font-weight: 600;
+                cursor: pointer;
             }
         }
     }

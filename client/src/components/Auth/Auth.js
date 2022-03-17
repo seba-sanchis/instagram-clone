@@ -49,7 +49,9 @@ const Auth = () => {
     }
   };
 
-  const googleError = () => alert("Google Sign In was unsuccessful. Try again later");
+  const googleError = (res) => {
+    console.log(res);
+  };
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -92,9 +94,14 @@ const Auth = () => {
                 <div className="auth-divider-text">OR</div>
                 <div className="auth-divider-line"></div>
               </div>
+
+              {/* Google OAuth 2.0 */}
               <div className="auth-google-login">
                 <GoogleLogin
                   clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                  buttonText="Log in with Google"
+                  className="auth-google-oauth"
+                  theme="dark"
                   onSuccess={googleSuccess}
                   onFailure={googleError}
                   cookiePolicy="single_host_origin"
@@ -104,8 +111,8 @@ const Auth = () => {
           </div>
           <div className="auth-form-container">
             {isSignup
-              ? <div>Have an account? <button type="button" onClick={switchMode}>Log in</button></div>
-              : <div>Don't have an account? <button type="button" onClick={switchMode}>Sign up</button></div>}
+              ? <div className="auth-account">Have an account? <button className="auth-account-btn" type="button" onClick={switchMode}>Log in</button></div>
+              : <div className="auth-account">Don't have an account? <button className="auth-account-btn" type="button" onClick={switchMode}>Sign up</button></div>}
           </div>
         </div>
       </article>
