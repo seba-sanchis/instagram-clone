@@ -29,7 +29,6 @@ const Auth = () => {
     e.preventDefault();
 
     if (isSignup) {
-      console.log(form, "auth component")
       dispatch(signup(form, navigate))
     } else {
       dispatch(signin(form, navigate))
@@ -55,14 +54,21 @@ const Auth = () => {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const re = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+  const re = new RegExp(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
-  const submitOk = form.email.match(re) && form.password.length >= 6 ? "auth-submit" : "auth-submit auth-submit-disabled";
+  const submitStyle = 
+    (isSignup && form.firstName.length >= 1 && form.lastName.length >= 1 && form.email.match(re) && form.password.length >= 6 && form.confirmPassword.length >= 6)
+    || (!isSignup && form.email.match(re) && form.password.length >= 6)
+    ? "auth-submit"
+    : "auth-submit auth-submit-disabled";
+
+  const submitAction = 
+  (isSignup && form.firstName.length >= 1 && form.lastName.length >= 1 && form.email.match(re) && form.password.length >= 6 && form.confirmPassword.length >= 6)
+  || (!isSignup && form.email.match(re) && form.password.length >= 6);
 
   return (
-    <main>
+    <main className="auth-main">
       <article className="auth-container">
-        {/* <div>{isSignup ? "Sign up" : "Log In"}</div> */}
         <div className="auth">
           <div className="auth-form-container">
             <img className="auth-logo" src={logo} alt="logo" />
@@ -88,7 +94,7 @@ const Auth = () => {
                   value={form.confirmPassword}
                 />
               )}
-              <button className={submitOk} type="submit">{ isSignup ? "Sign up" : "Log in" }</button>
+              <button className={submitStyle} type="submit" disabled={!submitAction} >{ isSignup ? "Sign up" : "Log in" }</button>
               <div className="auth-divider">
                 <div className="auth-divider-line"></div>
                 <div className="auth-divider-text">OR</div>

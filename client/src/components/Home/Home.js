@@ -17,7 +17,7 @@ const Home = () => {
   }, [currentId, dispatch]);
 
   return (
-    <main>
+    <main className="home-main">
       <section className="home-section">
         <div className="home-posts">
           <Posts setCurrentId={setCurrentId} />

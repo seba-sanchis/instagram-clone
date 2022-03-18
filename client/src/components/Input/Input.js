@@ -5,6 +5,9 @@ import "./Input.scss";
 
 // Component
 const Input = ({ type, name, onChange, value }) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const handleShowPassword = () => setShowPassword(!showPassword);
+  
   const Placeholder = () => {
     return name === "firstName"
       ? "First name"
@@ -19,8 +22,6 @@ const Input = ({ type, name, onChange, value }) => {
       : null;
   };
 
-  const [showPassword, setShowPassword] = useState(false);
-  const handleShowPassword = () => setShowPassword(!showPassword);
   return (
     <div className="input-container">
       <label className="input-label">

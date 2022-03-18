@@ -12,7 +12,13 @@
     vertical-align: baseline;
     resize: none;
 }
-
-body {
+.app {
     background: #fafafa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+body {
+    // background: #fafafa;
+    min-height: 100vh;
 }
