@@ -8,24 +8,24 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-section">
-            <div className="footer-technologies">
-                <div>JavaScript</div>
-                <div>React</div>
-                <div>Redux</div>
-                <div>Node</div>
-                <div>MongoDB</div>
-                <div>Sass</div>
+        <div className="footer-info">
+            <div className="footer-description">
+                <div className="footer-description-link"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" rel="nofollow noopener noreferrer" target="_blank">JavaScript</a></div>
+                <div className="footer-description-link"><a href="https://reactjs.org/" rel="nofollow noopener noreferrer" target="_blank">React</a></div>
+                <div className="footer-description-link"><a href="https://redux.js.org/" rel="nofollow noopener noreferrer" target="_blank">Redux</a></div>
+                <div className="footer-description-link"><a href="https://nodejs.org/en/" rel="nofollow noopener noreferrer" target="_blank">Node</a></div>
+                <div className="footer-description-link"><a href="https://www.mongodb.com/" rel="nofollow noopener noreferrer" target="_blank">MongoDB</a></div>
+                <div className="footer-description-link"><a href="https://sass-lang.com/" rel="nofollow noopener noreferrer" target="_blank">Sass</a></div>
             </div>
-            <div className="footer-contact">
-                <div>Github</div>
-                <div>LinkedIn</div>
-                <div>E-mail</div>
+            <div className="footer-description">
+                <div className="footer-description-link"><a href="https://github.com/seba-sanchis/social-media" rel="nofollow noopener noreferrer" target="_blank">Github</a></div>
+                <div className="footer-description-link"><a href="https://www.linkedin.com/in/sebastian-sanchis/" rel="nofollow noopener noreferrer" target="_blank">LinkedIn</a></div>
+                <div className="footer-description-link"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=seba.sanchis@gmail.com" rel="nofollow noopener noreferrer" target="_blank">E-mail</a></div>
             </div>
         </div>
         <div className="footer-project">
-            <div>Buenos Aires, Argentina</div>
-            <div>2022 Social media project</div>
+            <div className="footer-project-description">Buenos Aires, Argentina</div>
+            <div className="footer-project-description">© 2022 Social media project from seba-sanchis</div>
         </div>
       </div>
     </footer>
