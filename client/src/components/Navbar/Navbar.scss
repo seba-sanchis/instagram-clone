@@ -63,6 +63,12 @@
       flex: 1 0 127px;
       display: flex;
       justify-content: flex-end;
+      .nav-user-img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
     }
   }
 }

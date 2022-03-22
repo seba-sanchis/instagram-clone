@@ -55,7 +55,7 @@ const Navbar = () => {
     <nav className="nav">
       <div className="nav-container">
         <div className="nav-logo">
-          <Link to="/"><img src={logo} /></Link>
+          <Link to="/"><img src={logo} alt="logo" /></Link>
         </div>
         <div className="nav-search">
           <div className="nav-search-btn">
@@ -67,11 +67,10 @@ const Navbar = () => {
           {user ? (
             <div>
               {user.result.imageUrl ? (
-                <img src={user.result.imageUrl} alt={user.result.name} />
+                <img className="nav-user-img" src={user.result.imageUrl} alt={user.result.name} />
               ) : (
                 <div>{user.result.name.charAt(0)}</div>
               )}
-              <div>{user.result.name}</div>
               <button onClick={logout}>Logout</button>
             </div>
           ) : (
