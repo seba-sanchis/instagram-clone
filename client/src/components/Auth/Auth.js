@@ -94,7 +94,7 @@ const Auth = () => {
                   value={form.confirmPassword}
                 />
               )}
-              <button className={submitStyle} type="submit" disabled={!submitAction} >{ isSignup ? "Sign up" : "Log in" }</button>
+              <button className={submitStyle} type="submit" disabled={!submitAction}>{ isSignup ? "Sign up" : "Log in" }</button>
               <div className="auth-divider">
                 <div className="auth-divider-line"></div>
                 <div className="auth-divider-text">OR</div>

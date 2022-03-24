@@ -3,9 +3,9 @@ import { AUTH } from "../constants/actionTypes";
 import * as api from "../api/index.js";
 
 // Action Creators
-export const signin = (formData, navigate) => async (dispatch) => {
+export const signin = (form, navigate) => async (dispatch) => {
   try {
-    const { data } = await api.signIn(formData);
+    const { data } = await api.signIn(form);
 
     dispatch({ type: AUTH, data });
 

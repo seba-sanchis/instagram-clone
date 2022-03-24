@@ -16,13 +16,13 @@ const App = () => {
   return (
     <BrowserRouter>
     <div className="app">
-      {user ? <Navbar /> : null}
+      <Navbar />
       <Routes>
-        <Route path="/" element={user ? <Home /> : <Navigate to="/auth" />} />
+        <Route path="/" element={<Home />} />
         <Route path="/posts/:id" element={<PostDetails />} />
-        <Route path="/auth" element={!user ? <Auth /> : <Navigate to="/" />} />
+        <Route path="/auth" element={<Auth />} />
       </Routes>
-      {!user ? <Footer /> : null}
+      <Footer />
       </div>
     </BrowserRouter>
   );
