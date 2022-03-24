@@ -1,5 +1,5 @@
 // Imports
-import { FETCH_POST, FETCH_POSTS, CREATE, UPDATE, LIKE, COMMENT, DELETE, START_LOADING, END_LOADING } from "../constants/actionTypes";
+import { FETCH_POST, FETCH_POSTS, CREATE, UPDATE, LIKE, COMMENT, DELETE, START_LOADING, END_LOADING } from "../constants/types";
 import * as api from "../api/index.js";
 
 // Action Creators

@@ -1,5 +1,5 @@
 // Imports
-import { FETCH_USERS } from "../constants/actionTypes";
+import { FETCH_USERS } from "../constants/types";
 import * as api from "../api/index.js";
 
 // Action Creators

@@ -4,7 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 
-import * as actionType from '../../constants/actionTypes';
+import * as actionType from '../../constants/types';
 import { getUsersBySearch } from "../../actions/users";
 import "./Navbar.scss";
 import logo from "../../images/logo.png";
@@ -13,6 +13,7 @@ import logo from "../../images/logo.png";
 const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const [search, setSearch] = useState("");
+  const [toggleNav, setToggleNav] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -65,13 +66,15 @@ const Navbar = () => {
         </div>
         <div className="nav-menu">
           {user ? (
-            <div>
+            <div onClick={() => setToggleNav((state) => !state)}>
               {user.result.imageUrl ? (
                 <img className="nav-user-img" src={user.result.imageUrl} alt={user.result.name} />
               ) : (
                 <div>{user.result.name.charAt(0)}</div>
               )}
-              <button onClick={logout}>Logout</button>
+              {toggleNav && (
+                <button onClick={logout}>Logout</button>
+              )}
             </div>
           ) : (
             <Link to="/auth">Sing in</Link>

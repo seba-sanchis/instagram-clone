@@ -1,5 +1,5 @@
 // Imports
-import { AUTH } from "../constants/actionTypes";
+import { AUTH } from "../constants/types";
 import * as api from "../api/index.js";
 
 // Action Creators

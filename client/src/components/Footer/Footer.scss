@@ -1,5 +1,7 @@
+@import "../../constants/variables";
+
 .footer {
-    background-color: #fafafa;
+    background-color: $color-dark-white;
     padding: 0 16px;
     .footer-container {
         margin-bottom: 52px;
@@ -10,7 +12,7 @@
                 justify-content: center;
                 .footer-description-link {
                     margin: -2px 8px 9px 8px;
-                    color: #8e8e8e;
+                    color: $color-dark-gray;
                     font-size: 12px;
                 }
             }
@@ -21,7 +23,7 @@
             justify-content: center;
             .footer-project-description {
                 margin: -2px 8px -3px;
-                color: #8e8e8e;
+                color: $color-dark-gray;
                 font-size: 12px;
             }
         }

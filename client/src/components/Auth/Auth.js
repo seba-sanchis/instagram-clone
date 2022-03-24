@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
 
 import { signin, signup} from "../../actions/auth";
-import { AUTH } from '../../constants/actionTypes';
+import { AUTH } from '../../constants/types';
 import Input from "../Input/Input";
 import "./Auth.scss";
 import logo from "../../images/logo.png";

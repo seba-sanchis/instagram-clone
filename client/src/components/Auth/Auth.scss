@@ -1,3 +1,5 @@
+@import "../../constants/variables";
+
 .auth-main {
     display: flex;
     flex-direction: column;
@@ -19,8 +21,8 @@
             margin-top: 12px;
             max-width: 350px;
             .auth-form-container {
-                background-color: #fff;
-                border: 1px solid #dbdbdb;
+                background-color: $color-white;
+                border: 1px solid $color-soft-gray;
                 border-radius: 1px;
                 margin: 0 0 10px;
                 padding: 10px 0;
@@ -42,17 +44,17 @@
                         display: flex;
                         justify-content: center;
                         margin: 8px 40px;
-                        background-color: #0095f6;
+                        background-color: $color-blue;
                         border: 1px solid transparent;
                         border-radius: 4px;
-                        color: #fff;
+                        color: $color-white;
                         font-size: 14px;
                         font-weight: 600;
                         padding: 5px 9px;
                         cursor: pointer;
                     }
                     .auth-submit-disabled {
-                        background-color: rgba(0,149,246,.3);
+                        background-color: $color-light-blue;
                         opacity: 1;
                         pointer-events: none;
                     }
@@ -60,14 +62,14 @@
                         display: flex;
                         margin: 10px 40px 18px;
                         .auth-divider-line {
-                            background-color: #dbdbdb;
+                            background-color: $color-soft-gray;
                             flex-grow: 1;
                             height: 1px;
                             position: relative;
                             top: 0.45em;
                         }
                         .auth-divider-text {
-                            color: #8e8e8e;
+                            color: $color-dark-gray;
                             font-size: 13px;
                             font-weight: 600;
                             line-height: 15px;
@@ -95,12 +97,12 @@
                     }
                 }
                 .auth-account {
-                    color: #262626;
+                    color: $color-black;
                     font-size: 14px;
                     margin: 15px;
                 }
                 .auth-account-btn {
-                    color: #0095f6;
+                    color: $color-blue;
                     font-weight: 600;
                     cursor: pointer;
                 }

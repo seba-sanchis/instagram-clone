@@ -9,7 +9,7 @@ import {
   DELETE,
   START_LOADING,
   END_LOADING,
-} from "../constants/actionTypes";
+} from "../constants/types";
 
 // Reducer
 export default (state = { isLoading: true, posts: [] }, action) => {

@@ -1,6 +1,8 @@
+@import "../../constants/variables";
+
 .post {
-  background: #fff;
-  border: 1px solid #dbdbdb;
+  background: $color-white;
+  border: 1px solid $color-soft-gray;
   width: 100%;
   margin-bottom: 24px;
   display: flex;
@@ -12,7 +14,7 @@
     flex-grow: 1;
   }
   .post-user {
-    color: #262626;
+    color: $color-black;
     font-size: 14px;
     font-weight: 600;
   }
@@ -23,14 +25,14 @@
     justify-content: center;
     cursor: pointer;
     .post-menu-icon {
-      color: #262626;
-      fill: #262626;
+      color: $color-black;
+      fill: $color-black;
       width: 24px;
       height: 24px;
     }
   }
   .post-menu-background {
-    background-color: rgba(0,0,0,.65);
+    background-color: $color-dark-black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,13 +42,13 @@
     bottom: 0;
     left: 0;
     .post-menu-container {
-      background-color: #fff;
+      background-color: $color-white;
       border-radius: 12px;
       display: flex;
       flex-direction: column;
       width: 400px;
       button {
-        border-top: 1px solid #dbdbdb;
+        border-top: 1px solid $color-soft-gray;
         min-height: 48px;
         padding: 4px 8px;
         font-size: 14px;
@@ -55,11 +57,11 @@
           border-top: none;
         }
         &:active {
-          background-color: rgba(0,0,0,.1);
+          background-color: $color-soft-black;
         }
       }
       .post-menu-warning {
-        color: #ed4956;
+        color: $color-red;
         font-weight: 700;
       }
     }
@@ -78,17 +80,17 @@
       padding: 8px;
       cursor: pointer;
       &:hover .post-like-icon {
-        fill: #8e8e8e;
+        fill: $color-dark-gray;
       }
       .post-like-icon {
-        color: #262626;
-        fill: #262626;
+        color: $color-black;
+        fill: $color-black;
         width: 24px;
         height: 24px;
       }
       .post-unlike-icon {
-        color: #ed4956;
-        fill: #ed4956;
+        color: $color-red;
+        fill: $color-red;
         width: 24px;
         height: 24px;
       }
@@ -101,10 +103,10 @@
       width: 40px;
       height: 40px;
       &:hover .post-comment-icon {
-        color: #8e8e8e;
+        color: $color-dark-gray;
       }
       .post-comment-icon {
-        color: #262626;
+        color: $color-black;
         width: 24px;
         height: 24px;
         stroke: currentColor;
@@ -118,26 +120,26 @@
     width: 100%;
     padding: 0 16px;
     margin-bottom: 8px;
-    color: #262626;
+    color: $color-black;
     font-size: 14px;
     font-weight: 600;
   }
   .post-comments-container {
     padding: 0 16px;
     .post-message {
-      color: #262626;
+      color: $color-black;
       font-size: 14px;
       font-weight: 400;
       margin-bottom: 4px;
     }
     .post-tags {
-      color: #00376b;
+      color: $color-dark-blue;
       font-size: 14px;
       font-weight: 400;
       margin: 4px 0;
     }
     .post-comments-display {
-      color: #8e8e8e;
+      color: $color-dark-gray;
       font-size: 14px;
       font-weight: 400;
       margin-bottom: 4px;
@@ -145,7 +147,7 @@
     }
   }
   .post-time {
-    color: #8e8e8e;
+    color: $color-dark-gray;
     font-size: 10px;
     font-weight: 400;
     text-transform: uppercase;
@@ -155,7 +157,7 @@
     margin-bottom: 16px;
   }
   .post-comment-add {
-    border-top: 1px solid #efefef;
+    border-top: 1px solid $color-light-gray;
     padding: 6px 16px;
     width: 100%;
     display: flex;
@@ -169,8 +171,8 @@
       align-items: center;
     }
     .post-emoji-icon {
-      color: #262626;
-      fill: #262626;
+      color: $color-black;
+      fill: $color-black;
       width: 24px;
       height: 24px;
     }
@@ -180,12 +182,12 @@
       height: 18px;
       line-height: 18px;
       max-height: 80px;
-      color: #262626;
+      color: $color-black;
       outline: 0;
       font-size: 14px;
     }
     .post-comment-send {
-      color: #0095f6;
+      color: $color-blue;
       font-size: 14px;
       font-weight: 600;
       &:disabled {

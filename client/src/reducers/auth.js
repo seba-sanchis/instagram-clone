@@ -1,5 +1,5 @@
 // Imports
-import { AUTH, LOGOUT } from "../constants/actionTypes";
+import { AUTH, LOGOUT } from "../constants/types";
 
 // Reducer
 const authReducer = (state = { authData: null }, action) => {

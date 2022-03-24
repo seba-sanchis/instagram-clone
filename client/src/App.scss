@@ -1,3 +1,5 @@
+@import "constants/variables";
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +15,7 @@
     resize: none;
 }
 .app {
-    background: #fafafa;
+    background: $color-dark-white;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
