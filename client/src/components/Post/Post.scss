@@ -15,8 +15,8 @@
   }
   .post-user {
     color: $color-black;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: $font-size-l;
+    font-weight: $font-weight-medium;
   }
   .post-menu-btn {
     padding: 8px;
@@ -51,7 +51,7 @@
         border-top: 1px solid $color-soft-gray;
         min-height: 48px;
         padding: 4px 8px;
-        font-size: 14px;
+        font-size: $font-size-l;
         cursor: pointer;
         &:first-child {
           border-top: none;
@@ -62,7 +62,7 @@
       }
       .post-menu-warning {
         color: $color-red;
-        font-weight: 700;
+        font-weight: $font-weight-bold;
       }
     }
   }
@@ -121,26 +121,26 @@
     padding: 0 16px;
     margin-bottom: 8px;
     color: $color-black;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: $font-size-l;
+    font-weight: $font-weight-medium;
   }
   .post-comments-container {
     padding: 0 16px;
     .post-message {
       color: $color-black;
-      font-size: 14px;
-      font-weight: 400;
+      font-size: $font-size-l;
+      font-weight: $font-weight-normal;
       margin-bottom: 4px;
     }
     .post-tags {
       color: $color-dark-blue;
-      font-size: 14px;
-      font-weight: 400;
+      font-size: $font-size-l;
+      font-weight: $font-weight-normal;
       margin: 4px 0;
     }
     .post-comments-display {
       color: $color-dark-gray;
-      font-size: 14px;
+      font-size: $font-size-l;
       font-weight: 400;
       margin-bottom: 4px;
       cursor: pointer;
@@ -148,10 +148,10 @@
   }
   .post-time {
     color: $color-dark-gray;
-    font-size: 10px;
-    font-weight: 400;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-normal;
     text-transform: uppercase;
-    letter-spacing: .2px;
+    letter-spacing: 0.2px;
     width: 100%;
     padding: 0 16px;
     margin-bottom: 16px;
@@ -184,14 +184,14 @@
       max-height: 80px;
       color: $color-black;
       outline: 0;
-      font-size: 14px;
+      font-size: $font-size-l;
     }
     .post-comment-send {
       color: $color-blue;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: $font-size-l;
+      font-weight: $font-weight-medium;
       &:disabled {
-        opacity: .3;
+        opacity: 0.3;
       }
     }
   }

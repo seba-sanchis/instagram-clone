@@ -42,8 +42,8 @@
           flex-grow: 1;
           .details-user {
             color: $color-black;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: $font-size-l;
+            font-weight: $font-weight-medium;
           }
         }
         .details-menu-btn {
@@ -79,7 +79,7 @@
               border-top: 1px solid $color-soft-gray;
               min-height: 48px;
               padding: 4px 8px;
-              font-size: 14px;
+              font-size: $font-size-l;
               cursor: pointer;
               &:first-child {
                 border-top: none;
@@ -90,7 +90,7 @@
             }
             .details-menu-warning {
               color: $color-red;
-              font-weight: 700;
+              font-weight: $font-weight-bold;
             }
           }
         }
@@ -102,24 +102,24 @@
         height: calc(100% - 32px);
         flex-grow: 1;
         &::-webkit-scrollbar {
-            display: none;
+          display: none;
         }
         .details-user {
-            color: $color-black;
-            font-size: 14px;
-            font-weight: 600;
-          }
+          color: $color-black;
+          font-size: $font-size-l;
+          font-weight: $font-weight-medium;
+        }
         .details-message {
           color: $color-black;
-          font-size: 14px;
-          font-weight: 400;
+          font-size: $font-size-l;
+          font-weight: $font-weight-normal;
           margin-bottom: 4px;
           right: 0;
         }
         .details-tags {
           color: $color-dark-blue;
-          font-size: 14px;
-          font-weight: 400;
+          font-size: $font-size-l;
+          font-weight: $font-weight-normal;
           margin: 4px 0;
         }
       }
@@ -177,13 +177,13 @@
         padding: 0 16px;
         margin-bottom: 8px;
         color: $color-black;
-        font-size: 14px;
-        font-weight: 600;
+        font-size: $font-size-l;
+        font-weight: $font-weight-medium;
       }
       .details-time {
         color: $color-dark-gray;
-        font-size: 10px;
-        font-weight: 400;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-normal;
         text-transform: uppercase;
         letter-spacing: 0.2px;
         width: 100%;
@@ -218,12 +218,12 @@
           max-height: 80px;
           color: $color-black;
           outline: 0;
-          font-size: 14px;
+          font-size: $font-size-l;
         }
         .details-comment-send {
           color: $color-blue;
-          font-size: 14px;
-          font-weight: 600;
+          font-size: $font-size-l;
+          font-weight: $font-weight-medium;
           &:disabled {
             opacity: 0.3;
           }

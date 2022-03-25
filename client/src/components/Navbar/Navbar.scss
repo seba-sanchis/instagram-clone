@@ -54,8 +54,8 @@
         display: flex;
         align-items: center;
         color: $color-dark-gray;
-        font-size: 16px;
-        font-weight: 300;
+        font-size: $font-size-xl;
+        font-weight: $font-weight-light;
       }
       :focus {
         outline: none;

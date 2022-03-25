@@ -1,112 +1,112 @@
 @import "../../constants/variables";
 
 .auth-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  .auth-container {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    flex-grow: 1;
-    .auth-container {
+    margin: 32px auto 0;
+    max-width: 935px;
+    width: 100%;
+    padding-bottom: 32px;
+    .auth {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex-grow: 1;
+      margin-top: 12px;
+      max-width: 350px;
+      .auth-form-container {
+        background-color: $color-white;
+        border: 1px solid $color-soft-gray;
+        border-radius: 1px;
+        margin: 0 0 10px;
+        padding: 10px 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 32px auto 0;
-        max-width: 935px;
-        width: 100%;
-        padding-bottom: 32px;
-        .auth {
+        flex-direction: column;
+        flex-grow: 1;
+        .auth-logo {
+          margin: 22px auto 12px;
+        }
+        .auth-form {
+          display: flex;
+          flex-direction: column;
+          margin: 24px 0 10px;
+          max-width: 350px;
+          width: 100%;
+          .auth-submit {
             display: flex;
             justify-content: center;
-            flex-direction: column;
-            flex-grow: 1;
-            margin-top: 12px;
-            max-width: 350px;
-            .auth-form-container {
-                background-color: $color-white;
-                border: 1px solid $color-soft-gray;
-                border-radius: 1px;
-                margin: 0 0 10px;
-                padding: 10px 0;
+            margin: 8px 40px;
+            background-color: $color-blue;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: $color-white;
+            font-size: $font-size-l;
+            font-weight: $font-weight-medium;
+            padding: 5px 9px;
+            cursor: pointer;
+          }
+          .auth-submit-disabled {
+            background-color: $color-light-blue;
+            opacity: 1;
+            pointer-events: none;
+          }
+          .auth-divider {
+            display: flex;
+            margin: 10px 40px 18px;
+            .auth-divider-line {
+              background-color: $color-soft-gray;
+              flex-grow: 1;
+              height: 1px;
+              position: relative;
+              top: 0.45em;
+            }
+            .auth-divider-text {
+              color: $color-dark-gray;
+              font-size: $font-size-m;
+              font-weight: $font-weight-medium;
+              line-height: 15px;
+              margin: 0 18px;
+            }
+          }
+          .auth-google-login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 8px 40px;
+            .auth-google-oauth {
+              width: 100%;
+              box-shadow: none !important;
+              div {
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                flex-grow: 1;
-                .auth-logo {
-                    margin: 22px auto 12px;
-                }
-                .auth-form {
-                    display: flex;
-                    flex-direction: column;
-                    margin: 24px 0 10px;
-                    max-width: 350px;
-                    width: 100%;
-                    .auth-submit {
-                        display: flex;
-                        justify-content: center;
-                        margin: 8px 40px;
-                        background-color: $color-blue;
-                        border: 1px solid transparent;
-                        border-radius: 4px;
-                        color: $color-white;
-                        font-size: 14px;
-                        font-weight: 600;
-                        padding: 5px 9px;
-                        cursor: pointer;
-                    }
-                    .auth-submit-disabled {
-                        background-color: $color-light-blue;
-                        opacity: 1;
-                        pointer-events: none;
-                    }
-                    .auth-divider {
-                        display: flex;
-                        margin: 10px 40px 18px;
-                        .auth-divider-line {
-                            background-color: $color-soft-gray;
-                            flex-grow: 1;
-                            height: 1px;
-                            position: relative;
-                            top: 0.45em;
-                        }
-                        .auth-divider-text {
-                            color: $color-dark-gray;
-                            font-size: 13px;
-                            font-weight: 600;
-                            line-height: 15px;
-                            margin: 0 18px;
-                        }
-                    }
-                    .auth-google-login {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        margin: 8px 40px;
-                        .auth-google-oauth {
-                            width: 100%;
-                            box-shadow: none !important;
-                            div {
-                                display: flex;
-                                align-items: center;
-                            }
-                            span {
-                                margin: auto;
-                                font-family: Roboto, sans-serif;
-                                font-weight: 600 !important;
-                            }
-                        }
-                    }
-                }
-                .auth-account {
-                    color: $color-black;
-                    font-size: 14px;
-                    margin: 15px;
-                }
-                .auth-account-btn {
-                    color: $color-blue;
-                    font-weight: 600;
-                    cursor: pointer;
-                }
+              }
+              span {
+                margin: auto;
+                font-family: Roboto, sans-serif;
+                font-weight: $font-weight-medium !important;
+              }
             }
+          }
         }
-}
+        .auth-account {
+          color: $color-black;
+          font-size: $font-size-l;
+          margin: 15px;
+        }
+        .auth-account-btn {
+          color: $color-blue;
+          font-weight: $font-weight-medium;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }

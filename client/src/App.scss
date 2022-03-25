@@ -1,26 +1,26 @@
 @import "constants/variables";
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    font-family: 'Segoe UI', sans-serif;
-    color: inherit;
-    text-decoration: inherit;
-    background: none;
-    list-style-type: none;
-    box-sizing: border-box;
-    vertical-align: baseline;
-    resize: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-family: "Segoe UI", sans-serif;
+  color: inherit;
+  text-decoration: inherit;
+  background: none;
+  list-style-type: none;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  resize: none;
 }
 .app {
-    background: $color-dark-white;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  background: $color-dark-white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 body {
-    // background: #fafafa;
-    min-height: 100vh;
+  // background: #fafafa;
+  min-height: 100vh;
 }

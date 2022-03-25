@@ -1,31 +1,31 @@
 @import "../../constants/variables";
 
 .footer {
-    background-color: $color-dark-white;
-    padding: 0 16px;
-    .footer-container {
-        margin-bottom: 52px;
-        .footer-info {
-            margin-top: 24px;
-            .footer-description {
-                display: flex;
-                justify-content: center;
-                .footer-description-link {
-                    margin: -2px 8px 9px 8px;
-                    color: $color-dark-gray;
-                    font-size: 12px;
-                }
-            }
+  background-color: $color-dark-white;
+  padding: 0 16px;
+  .footer-container {
+    margin-bottom: 52px;
+    .footer-info {
+      margin-top: 24px;
+      .footer-description {
+        display: flex;
+        justify-content: center;
+        .footer-description-link {
+          margin: -2px 8px 9px 8px;
+          color: $color-dark-gray;
+          font-size: $font-size-s;
         }
-        .footer-project {
-            margin: 12px 0;
-            display: flex;
-            justify-content: center;
-            .footer-project-description {
-                margin: -2px 8px -3px;
-                color: $color-dark-gray;
-                font-size: 12px;
-            }
-        }
+      }
     }
+    .footer-project {
+      margin: 12px 0;
+      display: flex;
+      justify-content: center;
+      .footer-project-description {
+        margin: -2px 8px -3px;
+        color: $color-dark-gray;
+        font-size: $font-size-s;
+      }
+    }
+  }
 }
