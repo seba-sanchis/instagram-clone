@@ -13,7 +13,8 @@ const Footer = () => {
                 <div className="footer-description-link"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" rel="nofollow noopener noreferrer" target="_blank">JavaScript</a></div>
                 <div className="footer-description-link"><a href="https://reactjs.org/" rel="nofollow noopener noreferrer" target="_blank">React</a></div>
                 <div className="footer-description-link"><a href="https://redux.js.org/" rel="nofollow noopener noreferrer" target="_blank">Redux</a></div>
-                <div className="footer-description-link"><a href="https://nodejs.org/en/" rel="nofollow noopener noreferrer" target="_blank">Node</a></div>
+                <div className="footer-description-link"><a href="https://nodejs.org/en/" rel="nofollow noopener noreferrer" target="_blank">NodeJS</a></div>
+                <div className="footer-description-link"><a href="https://expressjs.com/" rel="nofollow noopener noreferrer" target="_blank">ExpressJS</a></div>
                 <div className="footer-description-link"><a href="https://www.mongodb.com/" rel="nofollow noopener noreferrer" target="_blank">MongoDB</a></div>
                 <div className="footer-description-link"><a href="https://sass-lang.com/" rel="nofollow noopener noreferrer" target="_blank">Sass</a></div>
             </div>

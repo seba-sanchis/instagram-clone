@@ -65,11 +65,105 @@
       flex: 1 0 127px;
       display: flex;
       justify-content: flex-end;
-      .nav-user-img {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        cursor: pointer;
+      .nav-user {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-left: 22px;
+        .nav-user-circle {
+          border: 1px solid #262626;
+          border-radius: 50%;
+          width: 28px;
+          height: 28px;
+          left: 50%;
+          top: 50%;
+          position: absolute;
+          transform: translate(-50%, -50%);
+        }
+        .nav-user-img {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          cursor: pointer;
+          position: relative;
+        }
+        .nav-toggle-show {
+          position: relative;
+          margin-left: -180px;
+          top: 15px;
+          .nav-tools-container {
+            background-color: $color-white;
+            border-radius: 6px;
+            box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
+            position: absolute;
+            display: flex;
+            .nav-tools-pointer {
+              position: absolute;
+              left: 184px;
+              bottom: 0;
+              top: -6px;
+              background: $color-white;
+              border: 1px solid $color-white;
+              box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
+              height: 14px;
+              width: 14px;
+              transform: rotate(45deg);
+              display: flex;
+            }
+            .nav-user-tools {
+              background: $color-white;
+              border-radius: 6px;
+              position: relative;
+              width: 100%;
+              height: 100%;
+              .nav-tool-btn {
+                cursor: pointer;
+                padding: 8px 16px 8px 16px;
+                display: flex;
+                align-items: center;
+                margin: -3px 0 -4px;
+                cursor: pointer;
+                .nav-tool-icon {
+                  color: $color-black;
+                  fill: $color-black;
+                  width: 16px;
+                  height: 16px;
+                  margin-right: 12px;
+                  .nav-icon-profile {
+                    fill: none;
+                    stroke: currentColor;
+                    stroke-linecap: round;
+                    stroke-miterlimit: 10;
+                    stroke-width: 2;
+                  }
+                  .nav-icon-settings {
+                    fill: none;
+                    stroke: currentColor;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-width: 2;
+                  }
+                }
+                .nav-tool-description {
+                  color: $color-black;
+                  font-size: $font-size-l;
+                  font-weight: $font-weight-normal;
+                  width: 170px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                }
+              }
+              .nav-tool-divider {
+                background-color: $color-soft-gray;
+                width: 100%;
+                height: 1px;
+              }
+            }
+          }
+        }
       }
     }
   }
