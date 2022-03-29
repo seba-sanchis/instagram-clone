@@ -93,12 +93,22 @@
           position: relative;
           margin-left: -180px;
           top: 15px;
+          .nav-toggle-hide {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: fixed;
+            display: flex;
+            z-index: 2;
+          }
           .nav-tools-container {
             background-color: $color-white;
             border-radius: 6px;
             box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
             position: absolute;
             display: flex;
+            z-index: 3;
             .nav-tools-pointer {
               position: absolute;
               left: 184px;
@@ -118,13 +128,18 @@
               position: relative;
               width: 100%;
               height: 100%;
+              overflow: hidden;
               .nav-tool-btn {
-                cursor: pointer;
                 padding: 8px 16px 8px 16px;
                 display: flex;
                 align-items: center;
-                margin: -3px 0 -4px;
                 cursor: pointer;
+                &:hover {
+                  background-color: $color-dark-white;
+                }
+                &:focus {
+                  background-color: $color-light-gray;
+                }
                 .nav-tool-icon {
                   color: $color-black;
                   fill: $color-black;
@@ -154,6 +169,8 @@
                   height: 28px;
                   display: flex;
                   align-items: center;
+                  margin: -3px 0 -4px;
+                  cursor: pointer;
                 }
               }
               .nav-tool-divider {
