@@ -19,6 +19,10 @@ On the server side, open the .env file and type the following variables:\
 
 In the project directory, you can run:
 
+### `npm i`
+
+Install packages and all dependencies for both client and server side.
+
 ### `npm start`
 
 Runs the app in the development mode for both client and server side.\
