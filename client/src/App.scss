@@ -1,5 +1,14 @@
+// Imports
 @import "constants/variables";
+@import "components/Auth/Auth.scss";
+@import "components/Footer/Footer.scss";
+@import "components/Home/Home.scss";
+@import "components/Input/Input.scss";
+@import "components/Navbar/Navbar.scss";
+@import "components/Post/Post.scss";
+@import "components/PostDetails/PostDetails.scss";
 
+// App style
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +30,5 @@
   flex-direction: column;
 }
 body {
-  // background: #fafafa;
   min-height: 100vh;
 }

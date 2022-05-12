@@ -1,8 +1,6 @@
 // Imports
 import React, { useState } from "react";
 
-import "./Input.scss";
-
 // Component
 const Input = ({ type, name, onChange, value }) => {
   const [showPassword, setShowPassword] = useState(false);

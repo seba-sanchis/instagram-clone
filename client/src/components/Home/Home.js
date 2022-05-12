@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { getPosts } from "../../actions/posts";
 import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
-import "./Home.scss"
 
 // Component
 const Home = () => {

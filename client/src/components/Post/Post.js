@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { deletePost, likePost, commentPost } from "../../actions/posts";
-import "./Post.scss";
 
 // Component
 const Post = ({ post, setCurrentId }) => {

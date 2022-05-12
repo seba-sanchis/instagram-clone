@@ -1,0 +1,26 @@
+.home-main {
+  flex-grow: 1;
+}
+
+.home-main .home-section {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.home-main .home-section .home-posts {
+  margin-right: 28px;
+  max-width: 614px;
+}
+
+.home-main .home-section .home-form {
+  max-width: 293px;
+  width: 100%;
+}
+
+/*# sourceMappingURL=Home.css.map */
+/*# sourceMappingURL=Home.css.map */
+
+/*# sourceMappingURL=Home.css.map */

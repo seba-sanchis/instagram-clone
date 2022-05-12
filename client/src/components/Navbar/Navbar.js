@@ -6,7 +6,6 @@ import decode from "jwt-decode";
 
 import * as actionType from '../../constants/types';
 import { getUsersBySearch } from "../../actions/users";
-import "./Navbar.scss";
 import logo from "../../images/logo.png";
 
 // Component

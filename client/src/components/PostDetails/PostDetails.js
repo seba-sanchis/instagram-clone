@@ -5,7 +5,6 @@ import moment from "moment";
 import { useParams } from "react-router-dom";
 
 import { getPost, deletePost, likePost, commentPost } from "../../actions/posts";
-import "./PostDetails.scss";
 
 // Component
 const PostDetails = ({ setCurrentId }) => {
