@@ -6,7 +6,7 @@
   border-bottom: 1px solid $color-soft-gray;
   height: 60px;
   padding: 0 20px;
-  .nav-container {
+  &-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +26,7 @@
       display: flex;
       align-items: center;
       padding: 3px 16px;
-      .nav-search-btn {
+      &-btn {
         display: flex;
         align-items: center;
         margin-right: 12px;
@@ -41,7 +41,7 @@
           stroke-width: 2;
         }
       }
-      .nav-search-input {
+      &-input {
         display: flex;
         align-items: center;
         height: 100%;
@@ -63,6 +63,25 @@
       flex: 1 0 127px;
       display: flex;
       justify-content: flex-end;
+      align-items: center;
+      a {
+        display: flex;
+      }
+      .nav-icon-filled {
+        color: $color-black;
+        fill: $color-black;
+        width: 24px;
+        height: 24px;
+      }
+      .nav-icon-unfilled {
+        color: $color-black;
+        fill: none;
+        stroke: currentColor;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+        width: 24px;
+        height: 24px;
+      }
       .nav-user {
         position: relative;
         display: flex;
@@ -70,8 +89,24 @@
         flex-wrap: wrap;
         flex-direction: column;
         margin-left: 22px;
-        .nav-user-circle {
-          border: 1px solid #262626;
+        .nav-icon-messenger {
+          fill: none;
+          stroke: currentColor;
+          stroke-miterlimit: 10;
+          stroke-width: 1.739;
+        }
+        .nav-icon-rule {
+          fill-rule: evenodd;
+        }
+        .nav-icon-stroke {
+          fill: none;
+          stroke: currentColor;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-width: 2;
+        }
+        &-circle {
+          border: 1px solid $color-black;
           border-radius: 50%;
           width: 28px;
           height: 28px;
@@ -80,12 +115,23 @@
           position: absolute;
           transform: translate(-50%, -50%);
         }
-        .nav-user-img {
+        &-img {
           width: 24px;
           height: 24px;
           border-radius: 50%;
           cursor: pointer;
           position: relative;
+        }
+        &-character {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $color-white;
+          background: $color-black;
         }
         .nav-toggle-show {
           position: relative;
