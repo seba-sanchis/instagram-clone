@@ -117,6 +117,9 @@ const Post = ({ post, setCurrentId }) => {
         <button className="post-comment-btn" onClick={() => {}}>
          <svg className="post-comment-icon" role="img" viewBox="0 0 24 24"><path d="M20.656 17.008a9.993 9.993 0 10-3.59 3.615L22 22z"></path></svg>
         </button>
+        <button className="post-share-btn">
+          <svg aria-label="Share Post" className="post-share-icon" role="img" viewBox="0 0 24 24"><line className="share-icon-line" x1="22" x2="9.218" y1="3" y2="10.083"></line><polygon className="share-icon-polygon" points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334"></polygon></svg>
+        </button>
       </section>
       <section className={<Likes /> === null ? "" : "post-likes"}>
         <Likes />

@@ -561,6 +561,32 @@
   stroke-width: 2;
   fill: none;
 }
+.post .post-btns .post-share-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+}
+.post .post-btns .post-share-btn:hover .post-share-icon {
+  color: #8e8e8e;
+}
+.post .post-btns .post-share-btn .post-share-icon {
+  color: #262626;
+  width: 24px;
+  height: 24px;
+}
+.post .post-btns .post-share-btn .post-share-icon .share-icon-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+.post .post-btns .post-share-btn .post-share-icon .share-icon-polygon {
+  fill: none;
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
 .post .post-likes {
   width: 100%;
   padding: 0 16px;

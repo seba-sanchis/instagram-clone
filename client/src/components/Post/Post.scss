@@ -113,6 +113,32 @@
         fill: none;
       }
     }
+    .post-share-btn {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      cursor: pointer;
+      &:hover .post-share-icon {
+        color: $color-dark-gray;
+      }
+      .post-share-icon {
+        color: $color-black;
+        width: 24px;
+        height: 24px;
+        .share-icon-line {
+          fill: none;
+          stroke: currentColor;
+          stroke-linejoin: round;
+          stroke-width: 2;
+        }
+        .share-icon-polygon {
+          fill: none;
+          stroke: currentColor;
+          stroke-linejoin: round;
+          stroke-width: 2;
+        }
+      }
+    }
   }
   .post-likes {
     width: 100%;
