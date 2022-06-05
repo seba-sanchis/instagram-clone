@@ -50,7 +50,7 @@ const Navbar = () => {
       searchUsers();
     }
   };
-console.log(toggleNav)
+  
   return (
     <nav className="nav">
       <div className="nav-container">

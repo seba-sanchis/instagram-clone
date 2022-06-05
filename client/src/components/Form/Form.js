@@ -48,12 +48,12 @@ const Form = ({ currentId, setCurrentId }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div>{currentId ? "Editing" : "Creating"}</div>
-      <input
+      {/* <input
         type="text"
         name="title"
         value={postData.title}
         onChange={(e) => setPostData({ ...postData, title: e.target.value })}
-      />
+      /> */}
       <input
         type="text"
         name="message"
