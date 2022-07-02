@@ -101,9 +101,9 @@ const Post = ({ post, setCurrentId }) => {
       <header className="post-header">
         <div className="post-user">{post.name}</div>
       </header>
-        <button className="post-menu-btn" onClick={() => setToggleMenu(true)}>
-          <svg className="post-menu-icon" role="img" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
-        </button>
+      <button className="post-menu-btn" onClick={() => setToggleMenu(true)}>
+        <svg className="post-menu-icon" role="img" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
+      </button>
       {toggleMenu && (
         <div className="post-menu-background" onClick={() => setToggleMenu(false)}>
           <div className="post-menu-container">

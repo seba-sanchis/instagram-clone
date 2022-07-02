@@ -21,9 +21,9 @@ const Home = () => {
         <div className="home-posts">
           <Posts setCurrentId={setCurrentId} />
         </div>
-        <div className="home-form">
+        {/* <div className="home-form">
           <Form currentId={currentId} setCurrentId={setCurrentId} />
-        </div>
+        </div> */}
       </section>
     </main>
   );
