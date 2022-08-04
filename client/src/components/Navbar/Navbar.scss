@@ -89,6 +89,7 @@
         flex-wrap: wrap;
         flex-direction: column;
         margin-left: 22px;
+        cursor: pointer;
         .nav-icon-messenger {
           fill: none;
           stroke: currentColor;
@@ -226,16 +227,25 @@
           }
         }
       }
-      .form-background {
-        background-color: $color-dark-black;
+      .form-container {
         display: flex;
         align-items: center;
         justify-content: center;
-        position: fixed;
+        position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
+        .form-background {
+          display: block;
+          background-color: $color-dark-black;
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+        }
       }
     }
   }
