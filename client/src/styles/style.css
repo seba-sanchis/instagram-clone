@@ -56,6 +56,9 @@
   padding: 5px 9px;
   cursor: pointer;
 }
+.auth-main .auth-container .auth .auth-form-container .auth-form .auth-submit:active {
+  opacity: 0.7;
+}
 .auth-main .auth-container .auth .auth-form-container .auth-form .auth-submit-disabled {
   background-color: rgba(0, 149, 246, 0.3);
   opacity: 1;
@@ -146,12 +149,11 @@
   align-items: center;
   flex-direction: column;
   width: 718px;
-  max-width: 855px;
   min-width: 348px;
   min-height: 391px;
-  max-height: 898px;
   position: absolute;
   z-index: 1;
+  margin: 20px;
 }
 .form .form-title {
   width: 100%;
@@ -171,7 +173,11 @@
   flex-direction: column;
   flex-grow: 1;
   width: 100%;
-  height: 100%;
+  height: calc(100vmin - 112px - 43px - 64px);
+  max-height: min(100vw - 32px - 340px, 855px);
+  max-width: min(100vw - 32px - 340px, 855px);
+  min-height: 348px;
+  min-width: 348px;
   padding: 24px;
 }
 .form form .form-media {
@@ -199,6 +205,9 @@
   line-height: 18px;
   cursor: pointer;
 }
+.form form .form-file-btn:active {
+  opacity: 0.7;
+}
 .form form .form-file-btn .form-filebase {
   display: none;
 }
@@ -206,6 +215,10 @@
   border-bottom: 1px solid #dbdbdb;
   margin-top: 24px;
   padding: 4px 9px;
+  outline: 0;
+}
+.form form .form-input:focus::placeholder {
+  color: #a8a8a8;
 }
 .form form .form-submit-btn {
   color: #0095f6;
@@ -213,6 +226,9 @@
   font-weight: 600;
   padding: 16px;
   cursor: pointer;
+}
+.form form .form-submit-btn:active {
+  opacity: 0.7;
 }
 
 .home-main {
@@ -759,9 +775,14 @@
   color: #0095f6;
   font-size: 14px;
   font-weight: 600;
+  cursor: pointer;
+}
+.post .post-comment-add .post-comment-send:active {
+  opacity: 0.7;
 }
 .post .post-comment-add .post-comment-send:disabled {
   opacity: 0.3;
+  cursor: auto;
 }
 
 .details-container {

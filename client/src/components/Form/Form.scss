@@ -5,12 +5,11 @@
     align-items: center;
     flex-direction: column;
     width: 718px;
-    max-width: 855px;
     min-width: 348px;
     min-height: 391px;
-    max-height: 898px;
     position: absolute;
     z-index: 1;
+    margin: 20px;
     .form-title {
         width: 100%;
         height: 43px;
@@ -29,7 +28,11 @@
         flex-direction: column;
         flex-grow: 1;
         width: 100%;
-        height: 100%;
+        height: calc( 100vmin - 112px - 43px - 64px );
+        max-height: min( calc( 100vw - 32px - 340px ), calc(898px - 43px) );
+        max-width: min( calc( 100vw - 32px - 340px ), calc(898px - 43px) );
+        min-height: calc( 391px - 43px );
+        min-width: calc( 391px - 43px );
         padding: 24px;
         .form-media {
             color: $color-black;
@@ -55,6 +58,9 @@
             border-radius: 4px;
             line-height: 18px;
             cursor: pointer;
+            &:active {
+                opacity: .7;
+            }
             .form-filebase {
                 display: none;
             }
@@ -63,6 +69,12 @@
             border-bottom: 1px solid $color-soft-gray;
             margin-top: 24px;
             padding: 4px 9px;
+            outline: 0;
+            &:focus {
+                &::placeholder {
+                    color: $color-gray;
+                }
+            }
         }
         .form-submit-btn {
             color: $color-blue;
@@ -70,6 +82,9 @@
             font-weight: $font-weight-medium;
             padding: 16px;
             cursor: pointer;
+            &:active {
+                opacity: .7;
+            }
         }
     }
 }
