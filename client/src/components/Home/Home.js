@@ -9,11 +9,34 @@ import Form from "../Form/Form";
 // Component
 const Home = () => {
   const [currentId, setCurrentId] = useState(null);
+  const [toggleForm, setToggleForm] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getPosts());
+    if (currentId !== null) {
+      setToggleForm(true);
+    }
   }, [currentId, dispatch]);
+
+  useEffect(() => {
+    if (!toggleForm) {
+      setCurrentId(null);
+    }
+  }, [toggleForm]);
+
+  useEffect(() => {
+    if (currentId == null) {
+      setToggleForm(false);
+    }  }, [<Form/>]);
+  
+  if (toggleForm) {
+    document.body.classList.add('body-form-overflow');
+  } else {
+    document.body.classList.remove('body-form-overflow');
+  }
+  
+  console.log(currentId)
 
   return (
     <main className="home-main">
@@ -21,9 +44,12 @@ const Home = () => {
         <div className="home-posts">
           <Posts setCurrentId={setCurrentId} />
         </div>
-        {/* <div className="home-form">
-          <Form currentId={currentId} setCurrentId={setCurrentId} />
-        </div> */}
+        {toggleForm && (
+          <div className="home-form">
+            <div className="home-form-background" onClick={() => setToggleForm(false)}></div>
+            <Form currentId={currentId} setCurrentId={setCurrentId} />
+          </div>
+        )}
       </section>
     </main>
   );

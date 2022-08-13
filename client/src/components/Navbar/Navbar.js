@@ -56,6 +56,12 @@ const Navbar = () => {
       searchUsers();
     }
   };
+
+  if (toggleForm) {
+    document.body.classList.add('body-form-overflow');
+  } else {
+    document.body.classList.remove('body-form-overflow');
+  }
   
   return (
     <nav className="nav">
@@ -90,7 +96,6 @@ const Navbar = () => {
                </button>
                {toggleForm && (
                  <div className="form-container">
-                  {document.body.style.overflow = "hidden"}
                   <div className="form-background" onClick={() => setToggleForm(false)}></div>
                   <Form />
                  </div>

@@ -1,5 +1,5 @@
 // Imports
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -46,14 +46,20 @@ const Post = ({ post, setCurrentId }) => {
       {(user?.result?.googleId === post?.creator ||
         user?.result?._id === post?.creator) && (
         <>
-          <button className="post-menu-warning" onClick={() => setCurrentId(post._id)}>Edit</button>
           <button className="post-menu-warning" onClick={() => dispatch(deletePost(post._id))}>Delete</button>
+          <button onClick={() => setCurrentId(post._id)}>Edit</button>
         </>
       )}
       <button onClick={openPost}>Go to post</button>
       <button onClick={() => setToggleMenu(false)}>Cancel</button>
     </>
   );
+
+  if (toggleMenu) {
+    document.body.classList.add('body-menu-overflow');
+  } else {
+    document.body.classList.remove('body-menu-overflow');
+  }
 
   const Likes = () => {
     if (likes.length > 0) {

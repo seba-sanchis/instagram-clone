@@ -11,8 +11,24 @@
       max-width: 614px;
     }
     .home-form {
-      max-width: 293px;
-      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      .home-form-background {
+        display: block;
+        background-color: $color-dark-black;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
     }
   }
 }
