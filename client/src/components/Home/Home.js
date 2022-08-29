@@ -36,8 +36,6 @@ const Home = () => {
     document.body.classList.remove('body-form-overflow');
   }
   
-  console.log(currentId)
-
   return (
     <main className="home-main">
       <section className="home-section">

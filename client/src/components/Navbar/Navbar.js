@@ -62,7 +62,7 @@ const Navbar = () => {
   } else {
     document.body.classList.remove('body-form-overflow');
   }
-  
+
   return (
     <nav className="nav">
       <div className="nav-container">
@@ -111,7 +111,7 @@ const Navbar = () => {
               <div className="nav-user" onClick={() => setToggleNav((state) => !state)}>
                 <div className={toggleNav ? "nav-user-circle" : undefined}></div>
                 {user.result.imageUrl ? (
-                  <img className="nav-user-img" src={user.result.imageUrl} alt={user.result.name} />
+                  <img className="nav-user-img" src={user.result.imageUrl} alt={user.result.name} referrerPolicy="no-referrer" />
                 ) : (
                   <div className="nav-user-character">{user.result.name.charAt(0)}</div>
                 )}
