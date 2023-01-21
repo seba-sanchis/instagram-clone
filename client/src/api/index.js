@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // Fetch (endpoints)
-const API = axios.create({ baseURL: "https://social-media.sebastiansanchis.com/" });
+const API = axios.create({ baseURL: "https://social-media-n8h5.onrender.com" });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("profile")) {
