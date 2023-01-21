@@ -21,12 +21,18 @@ app.use("/posts", postRoutes);
 app.use("/user", userRoutes);
 
 app.get("/", (req, res) => {
-    res.send("social-media server working properly");
-  });
+  res.send("social-media server working properly");
+});
 
 // MongoDB: connection with atlas cloud database
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
-    .catch((error) => console.log(error.message));
+mongoose
+  .connect(process.env.CONNECTION_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() =>
+    app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
+  )
+  .catch((error) => console.log(error.message));
