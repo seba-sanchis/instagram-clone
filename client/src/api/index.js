@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // Fetch (endpoints)
-const API = axios.create({ baseURL: "http://socialmedia-env.eba-ufz2av77.sa-east-1.elasticbeanstalk.com/" });
+const API = axios.create({ baseURL: "https://d35i30hnv6wcjm.cloudfront.net" });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("profile")) {
