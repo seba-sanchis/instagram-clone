@@ -6,57 +6,74 @@ import User from "../models/user.js";
 
 // Controllers
 export const signin = async (req, res) => {
-    const { email, password } = req.body;
+  const { email, password } = req.body;
 
-    try {
-        const existingUser = await User.findOne({ email });
+  try {
+    const existingUser = await User.findOne({ email });
 
-        if(!existingUser) return res.status(404).json({ message: "User doesn't exist." });
+    if (!existingUser)
+      return res.status(404).json({ message: "User doesn't exist." });
 
-        const isPasswordCorrect = await bcrypt.compare(password, existingUser.password);
+    const isPasswordCorrect = await bcrypt.compare(
+      password,
+      existingUser.password
+    );
 
-        if(!isPasswordCorrect) return res.status(400).json({ message: "Invalid credentials." });
+    if (!isPasswordCorrect)
+      return res.status(400).json({ message: "Invalid credentials." });
 
-        const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, "test", { expiresIn: "1h" });
+    const token = jwt.sign(
+      { email: existingUser.email, id: existingUser._id },
+      "test",
+      { expiresIn: "1h" }
+    );
 
-        res.status(200).json({ result: existingUser, token });
-    } catch (error) {
-        res.status(500).json({ message: "Something went wrong." });
-    }
-}
+    res.status(200).json({ result: existingUser, token });
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+};
 
 export const signup = async (req, res) => {
-    const { email, password, confirmPassword, firstName, lastName } = req.body;
-    
-    try {
-        const existingUser = await User.findOne({ email });
+  const { email, password, confirmPassword, firstName, lastName } = req.body;
 
-        if(existingUser) return res.status(400).json({ message: "User already exist." });
+  try {
+    const existingUser = await User.findOne({ email });
 
-        if(password !== confirmPassword) return res.status(400).json({ message: "Password don't match." });
+    if (existingUser)
+      return res.status(400).json({ message: "User already exist." });
 
-        const hashedPassword = await bcrypt.hash(password, 12);
+    if (password !== confirmPassword)
+      return res.status(400).json({ message: "Password don't match." });
 
-        const result = await User.create({ email, password: hashedPassword, name: `${firstName} ${lastName}` });
+    const hashedPassword = await bcrypt.hash(password, 12);
 
-        const token = jwt.sign({ email: result.email, id: result._id }, "test", { expiresIn: "1h" });
-        
-        res.status(200).json({ result, token });
-    } catch (error) {
-        res.status(500).json({ message: "Something went wrong." });
-    }
-}
+    const result = await User.create({
+      email,
+      password: hashedPassword,
+      name: `${firstName} ${lastName}`,
+    });
+
+    const token = jwt.sign({ email: result.email, id: result._id }, "test", {
+      expiresIn: "1h",
+    });
+
+    res.status(200).json({ result, token });
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
+  }
+};
 
 export const getUsersBySearch = async (req, res) => {
-    const { searchQuery } = req.query;
+  const { searchQuery } = req.query;
 
-    try {
-        const data = new RegExp(searchQuery, "i");
+  try {
+    const data = new RegExp(searchQuery, "i");
 
-        const users = await User.find({ $or: [{ name: data }, { email: data }] });
+    const users = await User.find({ $or: [{ name: data }, { email: data }] });
 
-        res.json({ data: users });
-    } catch (error) {
-        res.status(404).json({ message: error.message });
-    }
-}
+    res.json({ data: users });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
