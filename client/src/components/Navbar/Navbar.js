@@ -6,7 +6,7 @@ import decode from "jwt-decode";
 
 import * as actionType from '../../constants/types';
 import { getUsersBySearch } from "../../actions/users";
-import logo from "../../images/logo.jpg";
+import logo from "../../assets/logo.jpg";
 import Form from "../Form/Form"
 
 // Component
