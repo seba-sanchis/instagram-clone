@@ -1,8 +1,6 @@
 # Social media - Full Stack MERN Application
 
-This project was developed with [React](https://reactjs.org/) on the front end, with [NodeJS](https://nodejs.org/en/), [ExpressJS](https://expressjs.com/) & [MongoDB](https://www.mongodb.com/) on the back end.
-
-In addition, [Redux](https://redux.js.org/) was implemented to manage and centralize the state of the application and [Sass](https://sass-lang.com/) as a preprocessor compiled into CSS.
+Full CRUD app to upload your posts and manage them. You must first register or sign in with Google account.
 
 ## Setups
 
@@ -23,17 +21,31 @@ On the server side, open the .env file and type the following variables:
 
 ## Available Scripts
 
-In the project directory, you can run:
+Install packages and all dependencies for both client and server side.
 
 ```bash
     npm i
 ```
 
-Install packages and all dependencies for both client and server side.
+Runs the app in the development mode for both client and server side.
 
 ```bash
     npm start
 ```
 
-Runs the app in the development mode for both client and server side.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## Learn More
+
+To learn more about this project, take a look at the following resources:
+
+- [MongoDB](https://www.mongodb.com/) - source-available cross-platform document-oriented database program.
+- [ExpressJS](https://expressjs.com/) - backend web application framework for building RESTful APIs with Node.js.
+- [React](https://reactjs.org/) - open-source frontend JavaScript library for building user interfaces based on components.
+- [Redux](https://redux.js.org/) - open-source JavaScript library for managing and centralizing application state.
+- [NodeJS](https://nodejs.org/en/) - backend JavaScript runtime environment, runs on the V8 JavaScript Engine and executes JavaScript code outside a web browser.
+- [Sass](https://sass-lang.com/) - preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets.
+
+## Deployment
+
+Application hosted on AWS: https://social-media.sebastiansanchis.com/
