@@ -39,11 +39,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 To learn more about this project, take a look at the following resources:
 
-- [MongoDB](https://www.mongodb.com/) - source-available cross-platform document-oriented database program.
 - [ExpressJS](https://expressjs.com/) - backend web application framework for building RESTful APIs with Node.js.
+- [MongoDB](https://www.mongodb.com/) - source-available cross-platform document-oriented database program.
+- [NodeJS](https://nodejs.org/en/) - backend JavaScript runtime environment, runs on the V8 JavaScript Engine and executes JavaScript code outside a web browser.
 - [React](https://reactjs.org/) - open-source frontend JavaScript library for building user interfaces based on components.
 - [Redux](https://redux.js.org/) - open-source JavaScript library for managing and centralizing application state.
-- [NodeJS](https://nodejs.org/en/) - backend JavaScript runtime environment, runs on the V8 JavaScript Engine and executes JavaScript code outside a web browser.
 - [Sass](https://sass-lang.com/) - preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets.
 
 ## Deployment
