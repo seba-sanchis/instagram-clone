@@ -8,13 +8,13 @@ In addition, [Redux](https://redux.js.org/) was implemented to manage and centra
 
 Before you start, you will need to create the <code>.env</code> file in the root folder on both the client and the server side.
 
-On the client side, open the .env file and type the following variable:\
+On the client side, open the .env file and type the following variable:
 
 ```bash
     REACT_APP_GOOGLE_CLIENT_ID = *add your Google OAuth client ID*
 ```
 
-On the server side, open the .env file and type the following variables:\
+On the server side, open the .env file and type the following variables:
 
 ```bash
     PORT = 5000
