@@ -9,11 +9,17 @@ In addition, [Redux](https://redux.js.org/) was implemented to manage and centra
 Before you start, you will need to create the <code>.env</code> file in the root folder on both the client and the server side.
 
 On the client side, open the .env file and type the following variable:\
-<code>REACT_APP_GOOGLE_CLIENT_ID = *add your Google OAuth client ID*</code>
+
+```bash
+    REACT_APP_GOOGLE_CLIENT_ID = *add your Google OAuth client ID*
+```
 
 On the server side, open the .env file and type the following variables:\
-<code>PORT = 5000</code>\
-<code>CONNECTION_URL = *add your MongoDB connection string*</code>
+
+```bash
+    PORT = 5000
+    CONNECTION_URL = *add your MongoDB connection string*
+```
 
 ## Available Scripts
 
