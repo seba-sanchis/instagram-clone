@@ -19,11 +19,15 @@ On the server side, open the .env file and type the following variables:\
 
 In the project directory, you can run:
 
-### `npm i`
+```bash
+    npm i
+```
 
 Install packages and all dependencies for both client and server side.
 
-### `npm start`
+```bash
+    npm start
+```
 
 Runs the app in the development mode for both client and server side.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
