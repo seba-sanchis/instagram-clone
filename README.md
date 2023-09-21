@@ -45,7 +45,4 @@ To learn more about this project, take a look at the following resources:
 - [React](https://reactjs.org/) - Open-source frontend JavaScript library for building user interfaces based on components.
 - [Redux](https://redux.js.org/) - Open-source JavaScript library for managing and centralizing application state.
 - [Sass](https://sass-lang.com/) - Preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets.
-
-## Deployment
-
-This application is not currently being hosted.
+  
