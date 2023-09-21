@@ -1,4 +1,4 @@
-# Social media - full stack MERN application
+# Social media - Full stack MERN application
 
 Full CRUD app to upload your posts and manage them. You must first register or sign in with Google account.
 
@@ -39,13 +39,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 To learn more about this project, take a look at the following resources:
 
-- [ExpressJS](https://expressjs.com/) - backend web application framework for building RESTful APIs with Node.js.
-- [MongoDB](https://www.mongodb.com/) - source-available cross-platform document-oriented database program.
-- [NodeJS](https://nodejs.org/en/) - backend JavaScript runtime environment, runs on the V8 JavaScript Engine and executes JavaScript code outside a web browser.
-- [React](https://reactjs.org/) - open-source frontend JavaScript library for building user interfaces based on components.
-- [Redux](https://redux.js.org/) - open-source JavaScript library for managing and centralizing application state.
-- [Sass](https://sass-lang.com/) - preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets.
+- [ExpressJS](https://expressjs.com/) - Backend web application framework for building RESTful APIs with Node.js.
+- [MongoDB](https://www.mongodb.com/) - Source-available cross-platform document-oriented database program.
+- [NodeJS](https://nodejs.org/en/) - Backend JavaScript runtime environment, runs on the V8 JavaScript Engine and executes JavaScript code outside a web browser.
+- [React](https://reactjs.org/) - Open-source frontend JavaScript library for building user interfaces based on components.
+- [Redux](https://redux.js.org/) - Open-source JavaScript library for managing and centralizing application state.
+- [Sass](https://sass-lang.com/) - Preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets.
 
 ## Deployment
 
-Application hosted on AWS: https://social-media.sebastiansanchis.com/
+This application is not currently being hosted.
