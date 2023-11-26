@@ -1,4 +1,4 @@
-# Social media - Full stack MERN application
+# Instagram Clone - Full stack MERN application
 
 Full CRUD app to upload your posts and manage them. You must first register or sign in with Google account.
 
